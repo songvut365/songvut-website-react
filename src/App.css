@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
-
 * {
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 html, body {
@@ -9,23 +7,6 @@ html, body {
 }
 
 .App {
-  height: 100vh;
-  text-align: center;
-  background-color: #212121;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
+  height: 100%;
+  background-color: whitesmoke;
 }
-
-h1 {
-  margin: 0;
-  padding: 0;
-  color: gold;
-}
-
-p {
-  color: white;
-}
-
