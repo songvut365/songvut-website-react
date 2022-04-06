@@ -9,10 +9,12 @@ import Projects from './components/Projects'
 import Contact from './components/Contact'
 
 import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
 
 function Home() {
     return (
     <div className="Home">
+      <Toolbar />
       <Sidebar />
       <Summary />
       <Skills />

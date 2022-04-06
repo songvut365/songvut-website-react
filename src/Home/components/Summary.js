@@ -12,7 +12,7 @@ export default function Summary() {
   const [firstName] = useState("songvut");
   const [lastName,] = useState("nakrong")
   const [career] = useState("web developer")
-  const [description] = useState("Hi! I'm 24 years old, king a full-time position in the field of web developer, where I can apply my knowledge and skills for continuous improvement. Now I'm learning japanese")
+  const [description] = useState("Hi! I'm 24 years old, A fresh graduate seeking a full-time position in the field of web developer, where I can apply my knowledge and skills for continuous improvement.")
 
   return (
     <div>

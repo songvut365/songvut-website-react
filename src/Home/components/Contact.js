@@ -16,7 +16,7 @@ export default function Contact() {
           m: 0, p:0, gap: 1
         }}
       >
-        <Typography variant="h3" component="div">
+        <Typography variant="h4" component="div">
           Contact
         </Typography>
 
