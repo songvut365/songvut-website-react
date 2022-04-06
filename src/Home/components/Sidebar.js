@@ -1,9 +1,12 @@
 import React from 'react';
+
 import Drawer from '@mui/material/Drawer';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import Toolbar from '@mui/material/Toolbar';
+
 import HomeIcon from '@mui/icons-material/Home';
 import StarIcon from '@mui/icons-material/Star';
 import SchoolIcon from '@mui/icons-material/School';
@@ -22,7 +25,15 @@ export default function Sidebar() {
         variant="permanent"
         anchor="left"
       >
-        <List sx={{display: 'flex', flexDirection: 'column'}}>
+        <List 
+          sx={{
+            display: 'flex', 
+            flexDirection: 'column', 
+            justifyContent: 'center',
+            height: 1
+          }}
+        >
+          <Divider />
           <ListItem>
             <IconButton aria-label="home" href="#summary">
               <HomeIcon />
