@@ -8,6 +8,13 @@ html, body {
 }
 
 .App {
-  height: 100%;
+  width: 100%;
   background-color: whitesmoke;
+}
+
+#footer {
+  text-align: center;
+  background-color: #1B1F23;
+  color: #6D7570;
+  padding: 0.5px;
 }

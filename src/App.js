@@ -1,21 +1,14 @@
 import './App.css';
 import Home from './Home/Home';
-import Navbar from './components/AppBar'
-
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Home />
 
-      <Container maxWidth="lg">
-        <Box sx={{pt: 5, px: 5, bgcolor: 'white'}}>
-          <Home/>
-        </Box>
-      </Container>
+      <div id="footer">
+        <p>Copyright © 2022 All rights reserved.</p>
+      </div>
     </div>
   );
 }
