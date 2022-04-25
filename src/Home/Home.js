@@ -42,7 +42,7 @@ function Skill(props) {
             {Array.from(skill.lists).map((list, index) => (
               <Typography variant="subtitle1" key={index} sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
                 <Avatar sx={{bgcolor: list.bgcolor, color: list.textcolor }} variant="square">{list.abb}</Avatar> 
-                { list.name }: {list.detail}
+                <b>{ list.name }:</b> {list.detail}
               </Typography>
             ))}
           </AccordionDetails>
@@ -294,7 +294,7 @@ function Home() {
         {
           name: "Git",
           detail: "",
-          abb: "G",
+          abb: "Git",
           bgcolor: "#e84d31",
           textcolor: "black"
         },
@@ -308,7 +308,7 @@ function Home() {
         {
           name: "Figma",
           detail: "",
-          abb: "F",
+          abb: "Fig",
           bgcolor: "black",
           textcolor: "#ea4b1c"
         },
@@ -439,20 +439,27 @@ function Home() {
                   alt="Live from space album cover"
                 />
                 <CardContent>
-                  <h2 style={{color: '#0984e3'}}>SONGVUT NAKRONG</h2>
-                  <h3>FULL STACK DEVELOPER</h3>
+                  <Typography variant="h5" component="div" sx={{color: '#0984e3'}}>
+                    SONGVUT NAKRONG
+                  </Typography>
+                  <Typography variant="p" component="div">
+                    FULL STACK DEVELOPER
+                  </Typography>
 
-                  <Divider />
+                  <Divider sx={{mt: 2, mb: 1}} />
 
-                  <h3>Summary</h3>
+                  <Typography variant="h6" component="div">
+                    Summary
+                  </Typography>
                   <Typography variant="p" component="div">
                     Hi! I'm 24 years old, A fresh graduate seeking a full-time position in the field of <u>web developer</u>, where I can apply my knowledge and skills for continuous improvement.
                   </Typography>
-                  <br></br>
 
-                  <Divider />
+                  <Divider sx={{mt: 2, mb: 1}} />
 
-                  <h3>Contact</h3>
+                  <Typography variant="h6" component="div">
+                    Contact
+                  </Typography>
                   <Box sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
                     <EmailIcon fontSize="small" /><span>songvut.nakrong@gmail.com</span><br></br>
                   </Box>
@@ -473,29 +480,37 @@ function Home() {
 
               {/* Skills */}
               <Box sx={{pt: 1, pb: 1, pl:2, pr:2}}>
-                <h1>SKILLS</h1>
+                <Typography variant="h4" component="div" sx={{color: '#0984e3', mt: 3, mb: 3}}>
+                  SKILLS
+                </Typography>
                 <Skill skills={skills} />
 
-                <Divider sx={{mt: 4}}/>
+                <Divider sx={{mt: 5}}/>
               </Box>
 
               {/* Work experience */}
               <Box sx={{pt: 1, pb: 1, pl:2, pr:2}}>
-                <h1>WORK EXPERIENCE</h1>
+                <Typography variant="h4" component="div" sx={{color: '#0984e3'}}>
+                  WORK EXPERIENCE
+                </Typography>
                 <Experience experiences={experiences} />
                 <Divider />
               </Box>
                         
               {/* Education */}
               <Box sx={{pt: 1, pb: 1, pl:2, pr:2}}>
-                <h1>EDUCATION</h1>
+                <Typography variant="h4" component="div" sx={{color: '#0984e3'}}>
+                  EDUCATION
+                </Typography>
                 <Education educations={educations} />
                 <Divider />
               </Box>
 
               {/* Projects */}
               <Box sx={{pt: 1, pb: 1, pl:2, pr:2}}>
-                <h1>PROJECTS</h1>
+                <Typography variant="h4" component="div" sx={{color: '#0984e3', mb: 2}}>
+                  PROJECTS
+                </Typography>
 
                 <Project projects={projects} />
               </Box>
