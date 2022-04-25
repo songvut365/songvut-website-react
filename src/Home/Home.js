@@ -169,6 +169,31 @@ function Experience() {
             </Typography>
           </TimelineContent>
         </TimelineItem>
+
+        <TimelineItem>
+          <TimelineOppositeContent sx={{flex: 0, display: 'none'}}>
+          </TimelineOppositeContent>
+
+          <TimelineSeparator>
+            <TimelineDot color="primary" />
+            <TimelineConnector sx={{bgcolor: 'primary.main'}} />
+          </TimelineSeparator>
+
+          <TimelineContent sx={{width: 1}}>
+            <Typography variant="h6" component="div">
+            Advance Corporation Group Co.,Ltd
+            </Typography>
+            <Typography variant="p" component="div">
+              Intern
+            </Typography>
+            <Typography variant="p" component="div">
+              May 2017 - Sep 2017
+            </Typography>
+            <Typography variant="p" component="div">
+              • Installation, repair, maintenance of CCTV systems
+            </Typography>
+          </TimelineContent>
+        </TimelineItem>
       </Timeline>
     </div>
   )
@@ -181,13 +206,13 @@ function Home() {
         <Grid 
           container 
           spacing={{ xs: 2, md: 2 }} 
-          columns={{ xs: 12, sm: 12, md: 12 }}
+          columns={{ xs: 12, sm: 12, md: 9, lg: 11 }}
           sx={{display: 'flex', justifyContent: 'center'}}
         >
           {/* Left */}
-          <Grid item xs={12} sm={4} md={2} lg={2} xl={2} >
-            <Paper>
-              <Card sx={{display: 'flex', flexDirection: 'column'}}>
+          <Grid item xs={12} sm={8} md={3} lg={2}>
+            <Paper sx={{position: {lg: 'fixed'}, maxWidth: {lg: 0.16}}}>
+              <Card sx={{display: 'flex', flexDirection: 'column', bgcolor: 'whitesmoke'}}>
                 <CardMedia
                   component="img"
                   sx={{ width: 1 }}
@@ -196,7 +221,10 @@ function Home() {
                 />
                 <CardContent>
                   <h2 style={{color: '#0984e3'}}>SONGVUT NAKRONG</h2>
-                  <h3>Web Developer</h3>
+                  <h3>WEB DEVELOPER</h3>
+
+                  <Divider sx={{mb: 3}} />
+
                   <Typography variant="p" component="div">
                     Hi! I'm 24 years old, A fresh graduate seeking a full-time position in the field of web developer, where I can apply my knowledge and skills for continuous improvement.
                   </Typography>
@@ -214,8 +242,8 @@ function Home() {
           </Grid>
 
           {/* Right */}
-          <Grid item xs={12} sm={8} md={5} lg={5} sx={{pb: 4}}>
-            <Paper>
+          <Grid item xs={12} sm={8} md={6} lg={5} sx={{pb: 4}}>
+            <Paper sx={{bgcolor: 'whitesmoke'}}>
               <Box sx={{pt: 1, pb: 1, pl:2, pr:2}}>
                 <h1>SKILLS</h1>
                 <Skill 
@@ -258,9 +286,9 @@ function Home() {
                 <Grid
                   container 
                   spacing={{ xs: 2, md: 2 }} 
-                  columns={{ xs: 12, sm: 12, md: 12 }}
+                  columns={{ xs: 12, sm: 12, md: 12, lg: 12 }}
                 >
-                  <Grid item xs={12} sm={6} md={4} >
+                  <Grid item xs={12} sm={12} md={6} lg={4} >
                     <Project 
                       name="VCAPTCHA" 
                       image="https://avatars.githubusercontent.com/u/89780796?s=200&v=4" 
@@ -268,7 +296,7 @@ function Home() {
                       url="https://vcaptcha.work/"
                     />
                   </Grid>
-                  <Grid item xs={12} sm={6} md={4} >
+                  <Grid item xs={12} sm={12} md={6} lg={4} >
                     <Project 
                       name="Search Engine" 
                       image="https://raw.githubusercontent.com/songvut365/search-engine-django-elasticsearch/main/screenshot1.png" 
@@ -276,7 +304,7 @@ function Home() {
                       url="https://github.com/songvut365/search-engine-django-elasticsearch"
                     />
                   </Grid>
-                  <Grid item xs={12} sm={6} md={4} >
+                  <Grid item xs={12} sm={12} md={6} lg={4} >
                     <Project 
                       name="Game Store" 
                       image="https://raw.githubusercontent.com/songvut365/GameStore/main/screenshot.jpg" 
@@ -284,7 +312,7 @@ function Home() {
                       url="https://github.com/songvut365/GameStore"
                     />
                   </Grid>
-                  <Grid item xs={12} sm={6} md={4} >
+                  <Grid item xs={12} sm={12} md={6} lg={4} >
                     <Project 
                       name="DFA ATM" 
                       image="https://raw.githubusercontent.com/songvut365/DFA-ATM/master/screenshot.png" 
@@ -292,7 +320,7 @@ function Home() {
                       url="https://dfa-atm.web.app/"
                     />
                   </Grid>
-                  <Grid item xs={12} sm={6} md={4} >
+                  <Grid item xs={12} sm={12} md={6} lg={4} >
                     <Project 
                       name="Hairzer" 
                       image="https://raw.githubusercontent.com/songvut365/hairzer/master/image/home-page.jpg" 
@@ -301,7 +329,7 @@ function Home() {
                     />
                   </Grid>
 
-                  <Grid item xs={12} sm={12} md={12} 
+                  <Grid item xs={12} sm={12} md={12} lg={12}
                     sx={{display: 'flex', justifyContent: 'center', mt: 3, mb: 3}}
                   >
                     <Button variant="outlined" href="https://github.com/songvut365" target="_blank">

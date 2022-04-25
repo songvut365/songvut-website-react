@@ -9,12 +9,16 @@ html, body {
 
 .App {
   width: 100%;
-  background-color: whitesmoke;
+  background-image: url("./assets/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 #footer {
   text-align: center;
   background-color: #1B1F23;
-  color: #6D7570;
+  color: whitesmoke;
   padding: 0.5px;
 }
