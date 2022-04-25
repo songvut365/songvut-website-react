@@ -8,3 +8,8 @@
 h1 {
   color: #0984e3;
 }
+
+#left h3 {
+  padding: 0;
+  margin: 1rem 0rem 1rem 0rem;
+}

@@ -6,6 +6,7 @@ import Profile from '../assets/profile.jpg';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
+import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
@@ -25,6 +26,10 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 
+import EmailIcon from '@mui/icons-material/Email';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+
 function Skill(props) {
   return (
     <div>
@@ -35,8 +40,9 @@ function Skill(props) {
           </AccordionSummary>
           <AccordionDetails>
             {Array.from(skill.lists).map((list, index) => (
-              <Typography variant="subtitle1" key={index}>
-                • { list.name }: {list.detail}
+              <Typography variant="subtitle1" key={index} sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
+                <Avatar sx={{bgcolor: list.bgcolor, color: list.textcolor }} variant="square">{list.abb}</Avatar> 
+                { list.name }: {list.detail}
               </Typography>
             ))}
           </AccordionDetails>
@@ -183,19 +189,31 @@ function Home() {
       lists: [
         {
           name: "JavaScript",
-          detail: ""
+          detail: "",
+          abb: "JS",
+          bgcolor: "#F0DB4F",
+          textcolor: "#323330"
         },
         {
           name: "Python",
-          detail: ""
+          detail: "",
+          abb: "PY",
+          bgcolor: "#306998",
+          textcolor: "#FFE873"
         },
         {
           name: "Golang",
-          detail: ""
+          detail: "",
+          abb: "GO",
+          bgcolor: "#00acd7",
+          textcolor: "white"
         },
         {
           name: "Java",
-          detail: ""
+          detail: "",
+          abb: "J",
+          bgcolor: "#f89820",
+          textcolor: "#5382a1"
         }
       ]
     },
@@ -204,15 +222,24 @@ function Home() {
       lists: [
         {
           name: "Express.js",
-          detail: ""
+          detail: "",
+          abb: "EX",
+          bgcolor: "#F0DB4F",
+          textcolor: "#323330"
         },
         {
           name: "Django",
-          detail: ""
+          detail: "",
+          abb: "DJ",
+          bgcolor: "#092e20",
+          textcolor: "white"
         },
         {
           name: "Fiber",
-          detail: ""
+          detail: "",
+          abb: "F",
+          bgcolor: "whitesmoke",
+          textcolor: "#00acd7"
         },
       ]
     },
@@ -221,11 +248,17 @@ function Home() {
       lists: [
         {
           name: "Vue.js",
-          detail: ""
+          detail: "",
+          abb: "V",
+          bgcolor: "#3fb27f",
+          textcolor: "#32475b"
         },
         {
           name: "React.js",
-          detail: ""
+          detail: "",
+          abb: "R",
+          bgcolor: "#222222",
+          textcolor: "#61dafb"
         },
       ]
     },
@@ -234,15 +267,24 @@ function Home() {
       lists: [
         {
           name: "MySQL",
-          detail: ""
+          detail: "",
+          abb: "My",
+          bgcolor: "#00618a",
+          textcolor: "#e58e00"
         },
         {
           name: "MongoDB",
-          detail: ""
+          detail: "",
+          abb: "M",
+          bgcolor: "#1b2d39",
+          textcolor: "#07ab4f"
         },
         {
           name: "SQLite",
-          detail: ""
+          detail: "",
+          abb: "S",
+          bgcolor: "#3e9ad5",
+          textcolor: "#013a57"
         },
       ]
     },
@@ -251,20 +293,58 @@ function Home() {
       lists: [
         {
           name: "Git",
-          detail: ""
+          detail: "",
+          abb: "G",
+          bgcolor: "#e84d31",
+          textcolor: "black"
         },
         {
           name: "Docker",
-          detail: ""
+          detail: "",
+          abb: "D",
+          bgcolor: "#24b8eb",
+          textcolor: "#394d54"
         },
         {
           name: "Figma",
-          detail: ""
+          detail: "",
+          abb: "F",
+          bgcolor: "black",
+          textcolor: "#ea4b1c"
         },
         {
           name: "Insomnia",
-          detail: ""
+          detail: "",
+          abb: "I",
+          bgcolor: "#4700c3",
+          textcolor: "white"
         }
+      ]
+    },
+    {
+      name: "Language Proficiency",
+      lists: [
+        {
+          name: "Thai",
+          detail: "Native",
+          abb: "TH",
+          bgcolor: "#a51931",
+          textcolor: "#f4f5f8"
+        },
+        {
+          name: "English",
+          detail: "CEFR B1 (Intermediate)",
+          abb: "EN",
+          bgcolor: "#0a3161",
+          textcolor: "white"
+        },
+        {
+          name: "Japanese",
+          detail: "JLPT N5",
+          abb: "JP",
+          bgcolor: "white",
+          textcolor: "red"
+        },
       ]
     }
   ]
@@ -349,8 +429,8 @@ function Home() {
           sx={{display: 'flex', justifyContent: 'center'}}
         >
           {/* Left */}
-          <Grid item xs={12} sm={8} md={3} lg={2}>
-            <Paper sx={{position: {lg: 'fixed'}, maxWidth: {lg: 0.16}}}>
+          <Grid item xs={12} sm={8} md={3} lg={2} id="left">
+            <Paper sx={{position: {lg: 'fixed'}, maxWidth: {lg: 0.17}}}>
               <Card sx={{display: 'flex', flexDirection: 'column', bgcolor: 'whitesmoke'}}>
                 <CardMedia
                   component="img"
@@ -360,28 +440,35 @@ function Home() {
                 />
                 <CardContent>
                   <h2 style={{color: '#0984e3'}}>SONGVUT NAKRONG</h2>
-                  <h3>WEB DEVELOPER</h3>
+                  <h3>FULL STACK DEVELOPER</h3>
 
-                  <Divider sx={{mb: 3}} />
+                  <Divider />
 
+                  <h3>Summary</h3>
                   <Typography variant="p" component="div">
-                    Hi! I'm 24 years old, A fresh graduate seeking a full-time position in the field of web developer, where I can apply my knowledge and skills for continuous improvement.
+                    Hi! I'm 24 years old, A fresh graduate seeking a full-time position in the field of <u>web developer</u>, where I can apply my knowledge and skills for continuous improvement.
                   </Typography>
                   <br></br>
 
                   <Divider />
 
                   <h3>Contact</h3>
-                  <span className="textBold">Email: </span><span>songvut.nakrong@gmail.com</span><br></br>
-                  <span className="textBold">Tel: </span><span>+66 96 615 3710</span><br></br>
-                  <span className="textBold">Address: </span><span>Bangkok, Thailand</span><br></br>
+                  <Box sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
+                    <EmailIcon fontSize="small" /><span>songvut.nakrong@gmail.com</span><br></br>
+                  </Box>
+                  <Box sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
+                    <LocalPhoneIcon fontSize="small" /><span>+66 96 615 3710</span><br></br>
+                  </Box>
+                  <Box sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
+                    <LocationOnIcon fontSize="small" /><span>Bangkok, Thailand</span><br></br>
+                  </Box>
                 </CardContent>
               </Card>
             </Paper>
           </Grid>
 
           {/* Right */}
-          <Grid item xs={12} sm={8} md={6} lg={5} sx={{pb: 4}}>
+          <Grid item xs={12} sm={8} md={6} lg={5} sx={{pb: 4}} if="right">
             <Paper sx={{bgcolor: 'whitesmoke'}}>
 
               {/* Skills */}
