@@ -17,6 +17,8 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import IconButton from '@mui/material/IconButton';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
@@ -27,6 +29,10 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 
 import EmailIcon from '@mui/icons-material/Email';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
@@ -461,14 +467,39 @@ function Home() {
                     Contact
                   </Typography>
                   <Box sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
-                    <EmailIcon fontSize="small" /><span>songvut.nakrong@gmail.com</span><br></br>
+                    <EmailIcon color="action" fontSize="small"/>
+                    <span>songvut.nakrong@gmail.com</span><br></br>
                   </Box>
                   <Box sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
-                    <LocalPhoneIcon fontSize="small" /><span>+66 96 615 3710</span><br></br>
+                    <LocalPhoneIcon color="action" fontSize="small" />
+                    <span>+66 96 615 3710</span><br></br>
                   </Box>
                   <Box sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
-                    <LocationOnIcon fontSize="small" /><span>Bangkok, Thailand</span><br></br>
+                    <LocationOnIcon color="action" fontSize="small" />
+                    <span>Bangkok, Thailand</span><br></br>
                   </Box>
+                  
+                  <Divider sx={{mt: 2, mb: 2}} />
+
+                  <Stack
+                    direction="row"
+                    justifyContent="center"
+                    alignItems="center"
+                    spacing={1}
+                  >
+                    <IconButton aria-label="github" href="https://www.github.com/songvut365" target="_blank">
+                      <GitHubIcon />
+                    </IconButton>
+                    <IconButton aria-label="linkedin" href="https://www.linkedin.com/in/songvut-nakrong/"  target="_blank">
+                      <LinkedInIcon />
+                    </IconButton>
+                    <IconButton aria-label="facebook" href="https://www.facebook.com/songvut.365/" target="_blank">
+                      <FacebookIcon />
+                    </IconButton>
+                    <IconButton aria-label="instagram" href="https://www.instagram.com/songvut.365/" target="_blank">
+                      <InstagramIcon />
+                    </IconButton>
+                  </Stack>
                 </CardContent>
               </Card>
             </Paper>
