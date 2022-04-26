@@ -48,7 +48,7 @@ function Skill(props) {
             {Array.from(skill.lists).map((list, index) => (
               <Typography variant="subtitle1" key={index} sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
                 <Avatar sx={{bgcolor: list.bgcolor, color: list.textcolor }} variant="square">{list.abb}</Avatar> 
-                <b>{ list.name }:</b> {list.detail}
+                <Typography><b>{ list.name }:</b> {list.detail}</Typography>
               </Typography>
             ))}
           </AccordionDetails>
@@ -195,28 +195,28 @@ function Home() {
       lists: [
         {
           name: "JavaScript",
-          detail: "",
+          detail: "Used to develop web application projects and learn basics to use frameworks.",
           abb: "JS",
           bgcolor: "#F0DB4F",
           textcolor: "#323330"
         },
         {
           name: "Python",
-          detail: "",
+          detail: "Used to learn the basics of programming such Data Sturcture and Algorithm, Image Processing.",
           abb: "PY",
           bgcolor: "#306998",
           textcolor: "#FFE873"
         },
         {
           name: "Golang",
-          detail: "",
+          detail: "Used to develop personal projects and learn by myself.",
           abb: "GO",
           bgcolor: "#00acd7",
           textcolor: "white"
         },
         {
           name: "Java",
-          detail: "",
+          detail: "Used to learn OOP and design patterns.",
           abb: "J",
           bgcolor: "#f89820",
           textcolor: "#5382a1"
@@ -228,21 +228,21 @@ function Home() {
       lists: [
         {
           name: "Express.js",
-          detail: "",
+          detail: "Used to develop academic project (VCAPTCHA) and Hairzer.",
           abb: "EX",
           bgcolor: "#F0DB4F",
           textcolor: "#323330"
         },
         {
           name: "Django",
-          detail: "",
+          detail: "Used to develop small web application projects.",
           abb: "DJ",
           bgcolor: "#092e20",
           textcolor: "white"
         },
         {
           name: "Fiber",
-          detail: "",
+          detail: "Used to develop API of personal project such as Nihon Vocabulary and etc.",
           abb: "F",
           bgcolor: "whitesmoke",
           textcolor: "#00acd7"
@@ -254,14 +254,14 @@ function Home() {
       lists: [
         {
           name: "Vue.js",
-          detail: "",
+          detail: "Used to develop front-end web application, static web application and academic project (VCAPTCHA).",
           abb: "V",
           bgcolor: "#3fb27f",
           textcolor: "#32475b"
         },
         {
           name: "React.js",
-          detail: "",
+          detail: "Used to develop this website and studying to develop web applications in the future.",
           abb: "R",
           bgcolor: "#222222",
           textcolor: "#61dafb"
@@ -273,21 +273,21 @@ function Home() {
       lists: [
         {
           name: "MySQL",
-          detail: "",
+          detail: "Used as a database that requires data relationships and to develop academic project (VCAPTCHA).",
           abb: "My",
           bgcolor: "#00618a",
           textcolor: "#e58e00"
         },
         {
           name: "MongoDB",
-          detail: "",
+          detail: "Used to learn NoSQL database and to develop personal projects.",
           abb: "M",
           bgcolor: "#1b2d39",
           textcolor: "#07ab4f"
         },
         {
           name: "SQLite",
-          detail: "",
+          detail: "Used to develop with small projects.",
           abb: "S",
           bgcolor: "#3e9ad5",
           textcolor: "#013a57"
@@ -299,28 +299,28 @@ function Home() {
       lists: [
         {
           name: "Git",
-          detail: "",
+          detail: "Used for source code management and store projects on github.",
           abb: "Git",
           bgcolor: "#e84d31",
           textcolor: "black"
         },
         {
           name: "Docker",
-          detail: "",
+          detail: "Used to install tools that are difficult to configure such as Elasticsearch or project deployment.",
           abb: "D",
           bgcolor: "#24b8eb",
           textcolor: "#394d54"
         },
         {
           name: "Figma",
-          detail: "",
+          detail: "Used for design wire frame, prototype and learn about UX/UI",
           abb: "Fig",
           bgcolor: "black",
           textcolor: "#ea4b1c"
         },
         {
           name: "Insomnia",
-          detail: "",
+          detail: "Used for design API and testing API.",
           abb: "I",
           bgcolor: "#4700c3",
           textcolor: "white"
@@ -344,13 +344,13 @@ function Home() {
           bgcolor: "#0a3161",
           textcolor: "white"
         },
-        {
-          name: "Japanese",
-          detail: "JLPT N5",
-          abb: "JP",
-          bgcolor: "white",
-          textcolor: "red"
-        },
+        // {
+        //   name: "Japanese",
+        //   detail: "JLPT N5",
+        //   abb: "JP",
+        //   bgcolor: "white",
+        //   textcolor: "red"
+        // },
       ]
     }
   ]
@@ -436,8 +436,8 @@ function Home() {
         >
           {/* Left */}
           <Grid item xs={12} sm={8} md={3} lg={2} id="left">
-            <Paper sx={{position: {lg: 'fixed'}, maxWidth: {lg: 0.17}}}>
-              <Card sx={{display: 'flex', flexDirection: 'column', bgcolor: 'whitesmoke'}}>
+            <Paper sx={{position: {lg: 'fixed'}, maxWidth: {lg: 0.17}}} elevation={0} >
+              <Card sx={{display: 'flex', flexDirection: 'column', bgcolor: 'white'}} elevation={0}>
                 <CardMedia
                   component="img"
                   sx={{ width: 1 }}
@@ -458,7 +458,7 @@ function Home() {
                     Summary
                   </Typography>
                   <Typography variant="p" component="div">
-                    Hi! I'm 24 years old, A fresh graduate seeking a full-time position in the field of <u>web developer</u>, where I can apply my knowledge and skills for continuous improvement.
+                    Hi! I'm 24 years old, A fresh graduate seeking a full-time position in the field of <u>web development</u>, where I can apply my knowledge and skills for continuous improvement.
                   </Typography>
 
                   <Divider sx={{mt: 2, mb: 1}} />
@@ -507,7 +507,7 @@ function Home() {
 
           {/* Right */}
           <Grid item xs={12} sm={8} md={6} lg={5} sx={{pb: 4}} if="right">
-            <Paper sx={{bgcolor: 'whitesmoke'}}>
+            <Paper sx={{bgcolor: 'white'}} elevation={0}>
 
               {/* Skills */}
               <Box sx={{pt: 1, pb: 1, pl:2, pr:2}}>
