@@ -1,9 +1,12 @@
 import './App.css';
 import Home from './home/Home';
+import Appbar from './component/Appbar';
 
 function App() {
   return (
     <div className="App">
+      <Appbar />
+      
       <Home />
 
       <div id="footer">

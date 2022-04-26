@@ -427,7 +427,7 @@ function Home() {
 
   return (
     <div className="Home">
-      <Box sx={{display: 'flex', flexWrap: 'wrap'}}>
+      <Box sx={{display: 'flex', flexWrap: 'wrap', pt: 4}}>
         <Grid 
           container 
           spacing={{ xs: 2, md: 2 }} 
@@ -436,7 +436,7 @@ function Home() {
         >
           {/* Left */}
           <Grid item xs={12} sm={8} md={3} lg={2} id="left">
-            <Paper sx={{position: {lg: 'fixed'}, maxWidth: {lg: 0.17}}} elevation={0} >
+            <Paper sx={{position: {lg: 'fixed'}, maxWidth: {lg: 0.17}, pt: 4}} elevation={0} >
               <Card sx={{display: 'flex', flexDirection: 'column', bgcolor: 'white'}} elevation={0}>
                 <CardMedia
                   component="img"
