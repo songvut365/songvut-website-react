@@ -44,11 +44,15 @@ function Skill(props) {
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography variant="h6">{skill.name}</Typography>
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails sx={{display: 'flex', flexWrap: 'wrap', maxWidth: 1,  gap: {lg: 3}}}>
             {Array.from(skill.lists).map((list, index) => (
-              <Typography variant="subtitle1" key={index} sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
+              <Typography 
+                variant="subtitle1" 
+                key={index} 
+                sx={{display: 'flex', mb: 1, alignItems: 'center', flexDirection: "column", gap: 1, minWidth: 70, maxWidth: 70, textAlign: 'center'}}
+              >
                 <Avatar sx={{bgcolor: list.bgcolor, color: list.textcolor }} variant="square">{list.abb}</Avatar> 
-                <Typography><b>{ list.name }:</b> {list.detail}</Typography>
+                <Typography variant="p">{list.name}</Typography>
               </Typography>
             ))}
           </AccordionDetails>
@@ -136,7 +140,7 @@ function Education(props) {
                 {education.period}
               </Typography>
               <Typography variant="p" component="div">
-                {education.gpa}
+                GPA: {education.gpa}
               </Typography>
             </TimelineContent>
           </TimelineItem>
@@ -151,10 +155,10 @@ function Project(props) {
     <Grid
       container 
       spacing={{ xs: 2, md: 2 }} 
-      columns={{ xs: 12, sm: 12, md: 12, lg: 12 }}
+      columns={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }}
     >
       {Array.from(props.projects).map((project, index) => (
-        <Grid item xs={12} sm={12} md={6} lg={4} key={index} >
+        <Grid item xs={12} sm={12} md={6} lg={6} xl={4} key={index} >
           <Card sx={{height: 1, display: 'flex', flexDirection: 'column'}} >
             <CardMedia
               component="img"
@@ -331,14 +335,14 @@ function Home() {
       name: "Language Proficiency",
       lists: [
         {
-          name: "Thai",
+          name: "Thai: Native",
           detail: "Native",
           abb: "TH",
           bgcolor: "#a51931",
           textcolor: "#f4f5f8"
         },
         {
-          name: "English",
+          name: "English: CEFR B1",
           detail: "CEFR B1 (Intermediate)",
           abb: "EN",
           bgcolor: "#0a3161",
@@ -431,16 +435,16 @@ function Home() {
         <Grid 
           container 
           spacing={{ xs: 2, md: 2 }} 
-          columns={{ xs: 12, sm: 12, md: 9, lg: 11 }}
+          columns={{ xs: 12, sm: 12, md: 9, lg: 11, xl: 11 }}
           sx={{display: 'flex', justifyContent: 'center'}}
         >
           {/* Left */}
-          <Grid item xs={12} sm={8} md={3} lg={2} id="left">
-            <Paper sx={{position: {lg: 'fixed'}, maxWidth: {lg: 0.17}, pt: 4}} elevation={0} >
+          <Grid item xs={12} sm={4} md={3} lg={2} id="left">
+            <Paper sx={{position: {xl: 'fixed'}, zIndex: 5, maxWidth: {xl: 0.17}, pt: 4}} elevation={0} >
               <Card sx={{display: 'flex', flexDirection: 'column', bgcolor: 'white'}} elevation={0}>
                 <CardMedia
                   component="img"
-                  sx={{ width: 1 }}
+                  sx={{ width: 1, height: {xl: 350} }}
                   image={Profile}
                   alt="Live from space album cover"
                 />
@@ -500,8 +504,12 @@ function Home() {
                       <InstagramIcon />
                     </IconButton>
                   </Stack>
+
+                  <Divider sx={{mt: 2}} />
+
                 </CardContent>
               </Card>
+
             </Paper>
           </Grid>
 
@@ -510,7 +518,7 @@ function Home() {
             <Paper sx={{bgcolor: 'white'}} elevation={0}>
 
               {/* Skills */}
-              <Box sx={{pt: 1, pb: 1, pl:2, pr:2}}>
+              <Box sx={{pt: {lg: 1}, pb: {lg: 1}, pl:{lg: 2}, pr:{lg: 2}}}>
                 <Typography variant="h4" component="div" sx={{color: '#0984e3', mt: 3, mb: 3}}>
                   SKILLS
                 </Typography>
@@ -520,7 +528,7 @@ function Home() {
               </Box>
 
               {/* Work experience */}
-              <Box sx={{pt: 1, pb: 1, pl:2, pr:2}}>
+              <Box sx={{pt: 3, pb: {lg: 1}, pl:{lg: 2}, pr:{lg: 2}}}>
                 <Typography variant="h4" component="div" sx={{color: '#0984e3'}}>
                   WORK EXPERIENCE
                 </Typography>
@@ -529,7 +537,7 @@ function Home() {
               </Box>
                         
               {/* Education */}
-              <Box sx={{pt: 1, pb: 1, pl:2, pr:2}}>
+              <Box sx={{pt: 3, pb: {lg: 1}, pl:{lg: 2}, pr:{lg: 2}}}>
                 <Typography variant="h4" component="div" sx={{color: '#0984e3'}}>
                   EDUCATION
                 </Typography>
@@ -538,7 +546,7 @@ function Home() {
               </Box>
 
               {/* Projects */}
-              <Box sx={{pt: 1, pb: 1, pl:2, pr:2}}>
+              <Box sx={{pt: 3, pb: {lg: 1}, pl:{lg: 2}, pr:{lg: 2}}}>
                 <Typography variant="h4" component="div" sx={{color: '#0984e3', mb: 2}}>
                   PROJECTS
                 </Typography>
