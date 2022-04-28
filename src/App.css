@@ -21,5 +21,9 @@ html, body {
   text-align: center;
   background-color: #1B1F23;
   color: whitesmoke;
-  padding: 0.5px;
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
