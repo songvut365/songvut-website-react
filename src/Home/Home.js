@@ -27,6 +27,7 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
+import { CardActionArea } from '@mui/material';
 
 import EmailIcon from '@mui/icons-material/Email';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -40,23 +41,75 @@ function Skill(props) {
   return (
     <div>
       {Array.from(props.skills).map((skill, index) => (
-        <Accordion sx={{borderBottom: 0}} key={index}>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="h6">{skill.name}</Typography>
-          </AccordionSummary>
-          <AccordionDetails sx={{display: 'flex', flexWrap: 'wrap', maxWidth: 1,  gap: {lg: 3}}}>
-            {Array.from(skill.lists).map((list, index) => (
-              <Typography 
-                variant="subtitle1" 
-                key={index} 
-                sx={{display: 'flex', mb: 1, alignItems: 'center', flexDirection: "column", gap: 1, minWidth: 70, maxWidth: 70, textAlign: 'center'}}
-              >
-                <Avatar sx={{bgcolor: list.bgcolor, color: list.textcolor }} variant="square">{list.abb}</Avatar> 
-                <Typography variant="p">{list.name}</Typography>
-              </Typography>
-            ))}
-          </AccordionDetails>
-      </Accordion>
+        <Accordion sx={{borderBottom: 0}} key={index} >
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                <Typography variant="h6">{skill.name}</Typography>
+              </AccordionSummary>
+              {/* Check skill type */}
+              {skill.name !== "Language Proficiency" ? (
+                <AccordionDetails 
+                  sx={{
+                    display: 'flex', 
+                    flexWrap: 'wrap', 
+                    maxWidth: 1,  
+                    gap: {xs: 1, md: 3, xl: 8},
+                    justifyContent: {xs: 'space-around', lg: "center"}
+                  }}
+                >
+                  {Array.from(skill.lists).map((list, index) => (
+                      <Box  
+                        key={index} 
+                        sx={{
+                          display: 'flex', 
+                          mb: 1, 
+                          alignItems: 'center', 
+                          flexDirection: "column", 
+                          gap: 1,
+                          textAlign: 'center'}}
+                      >
+                        <Avatar 
+                          src={list.image} 
+                          variant="square" 
+                          sx={{
+                            width: 1,
+                            minHeight: 70, 
+                            maxHeight: 70
+                          }}
+                        />
+                        <Typography variant="p">{list.name}</Typography>
+                      </Box>
+                    ))}
+                </AccordionDetails>
+              ) : (
+              // Language skills
+                <AccordionDetails 
+                  sx={{
+                    display: 'flex', 
+                    flexWrap: 'wrap',
+                    justifyContent: { xs:  'space-around', xl: 'center'},
+                  }}
+                >
+                  {Array.from(skill.lists).map((list, index) => (
+                    <Box 
+                      key={index}
+                      sx={{
+                        display: 'flex', 
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        textAlign: 'center',
+                        gap: 1,
+                        maxWidth: { xs: 0.5, sm: 0.3, xl: 200 },
+                        minWidth: { xs: 0.5, sm: 0.3, xl: 200 },
+                        mb: 2,
+                      }}
+                    >
+                      <Avatar sx={{bgcolor: list.bgcolor, color: list.textcolor }} variant="square">{list.abb}</Avatar>
+                      <Typography variant="p">{list.name} : {list.detail}</Typography>
+                    </Box>
+                  ))}
+                </AccordionDetails>
+              )}
+        </Accordion>
       ))}
     </div>
   )
@@ -160,12 +213,14 @@ function Project(props) {
       {Array.from(props.projects).map((project, index) => (
         <Grid item xs={12} sm={12} md={6} lg={6} xl={4} key={index} >
           <Card sx={{height: 1, display: 'flex', flexDirection: 'column'}} >
-            <CardMedia
-              component="img"
-              height="200"
-              image={project.image}
-              alt="project image"
-            />
+            <CardActionArea href={project.url} target="_blank" >
+              <CardMedia
+                component="img"
+                height="200"
+                image={project.image}
+                alt="project image"
+              />
+            </CardActionArea>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 {project.name}
@@ -199,77 +254,59 @@ function Home() {
       lists: [
         {
           name: "JavaScript",
-          detail: "Used to develop web application projects and learn basics to use frameworks.",
-          abb: "JS",
-          bgcolor: "#F0DB4F",
-          textcolor: "#323330"
+          image: "/static/icon/javascript.png"
         },
         {
           name: "Python",
-          detail: "Used to learn the basics of programming such Data Sturcture and Algorithm, Image Processing.",
-          abb: "PY",
-          bgcolor: "#306998",
-          textcolor: "#FFE873"
+          image: "/static/icon/python.png"
         },
         {
           name: "Golang",
-          detail: "Used to develop personal projects and learn by myself.",
-          abb: "GO",
-          bgcolor: "#00acd7",
-          textcolor: "white"
+          image: "/static/icon/go.png"
         },
         {
           name: "Java",
-          detail: "Used to learn OOP and design patterns.",
-          abb: "J",
-          bgcolor: "#f89820",
-          textcolor: "#5382a1"
+          image: "/static/icon/java.png"
         }
       ]
     },
     {
-      name: "Back-end Framework",
+      name: "Back-end",
       lists: [
         {
           name: "Express.js",
-          detail: "Used to develop academic project (VCAPTCHA) and Hairzer.",
-          abb: "EX",
-          bgcolor: "#F0DB4F",
-          textcolor: "#323330"
+          image: "/static/icon/express.png"
         },
         {
           name: "Django",
-          detail: "Used to develop small web application projects.",
-          abb: "DJ",
-          bgcolor: "#092e20",
-          textcolor: "white"
+          image: "/static/icon/django.png"
         },
         {
           name: "Fiber",
-          detail: "Used to develop API of personal project such as Nihon Vocabulary and etc.",
-          abb: "F",
-          bgcolor: "whitesmoke",
-          textcolor: "#00acd7"
+          image: "/static/icon/fiber.png"
         },
       ]
     },
     {
-      name: "Front-end Framework",
+      name: "Front-end",
       lists: [
         {
           name: "Vue.js",
-          detail: "Used to develop front-end web application, static web application and academic project (VCAPTCHA).",
-          abb: "V",
-          bgcolor: "#3fb27f",
-          textcolor: "#32475b"
+          image: "/static/icon/vue.png"
+        },
+        {
+          name: "Vuetify",
+          image: "/static/icon/vuetify.png"
         },
         {
           name: "React.js",
-          detail: "Used to develop this website and studying to develop web applications in the future.",
-          abb: "R",
-          bgcolor: "#222222",
-          textcolor: "#61dafb"
+          image: "/static/icon/react.png"
         },
+        {
+          name: "MUI",
+          image: "/static/icon/mui.png"
+        },
+        
       ]
     },
     {
@@ -277,24 +314,15 @@ function Home() {
       lists: [
         {
           name: "MySQL",
-          detail: "Used as a database that requires data relationships and to develop academic project (VCAPTCHA).",
-          abb: "My",
-          bgcolor: "#00618a",
-          textcolor: "#e58e00"
+          image: "/static/icon/mysql.png"
         },
         {
           name: "MongoDB",
-          detail: "Used to learn NoSQL database and to develop personal projects.",
-          abb: "M",
-          bgcolor: "#1b2d39",
-          textcolor: "#07ab4f"
+          image: "/static/icon/mongodb.png"
         },
         {
           name: "SQLite",
-          detail: "Used to develop with small projects.",
-          abb: "S",
-          bgcolor: "#3e9ad5",
-          textcolor: "#013a57"
+          image: "/static/icon/sqlite.png"
         },
       ]
     },
@@ -303,31 +331,19 @@ function Home() {
       lists: [
         {
           name: "Git",
-          detail: "Used for source code management and store projects on github.",
-          abb: "Git",
-          bgcolor: "#e84d31",
-          textcolor: "black"
+          image: "/static/icon/git.png"
         },
         {
           name: "Docker",
-          detail: "Used to install tools that are difficult to configure such as Elasticsearch or project deployment.",
-          abb: "D",
-          bgcolor: "#24b8eb",
-          textcolor: "#394d54"
+          image: "/static/icon/docker.png"
         },
         {
           name: "Figma",
-          detail: "Used for design wire frame, prototype and learn about UX/UI",
-          abb: "Fig",
-          bgcolor: "black",
-          textcolor: "#ea4b1c"
+          image: "/static/icon/figma.png"
         },
         {
           name: "Insomnia",
-          detail: "Used for design API and testing API.",
-          abb: "I",
-          bgcolor: "#4700c3",
-          textcolor: "white"
+          image: "/static/icon/insomnia.png"
         }
       ]
     },
@@ -335,14 +351,14 @@ function Home() {
       name: "Language Proficiency",
       lists: [
         {
-          name: "Thai: Native",
+          name: "Thai",
           detail: "Native",
           abb: "TH",
           bgcolor: "#a51931",
           textcolor: "#f4f5f8"
         },
         {
-          name: "English: CEFR B1",
+          name: "English",
           detail: "CEFR B1 (Intermediate)",
           abb: "EN",
           bgcolor: "#0a3161",
@@ -352,7 +368,7 @@ function Home() {
         //   name: "Japanese",
         //   detail: "JLPT N5",
         //   abb: "JP",
-        //   bgcolor: "white",
+        //   bgcolor: "whitesmoke",
         //   textcolor: "red"
         // },
       ]
@@ -442,12 +458,14 @@ function Home() {
           <Grid item xs={12} sm={4} md={3} lg={2} id="left">
             <Paper sx={{position: {xl: 'fixed'}, zIndex: 5, maxWidth: {xl: 0.17}, pt: 4}} elevation={0} >
               <Card sx={{display: 'flex', flexDirection: 'column', bgcolor: 'white'}} elevation={0}>
+                <CardActionArea>
                 <CardMedia
                   component="img"
                   sx={{ width: 1, height: {xl: 350} }}
                   image={Profile}
                   alt="Live from space album cover"
                 />
+                </CardActionArea>
                 <CardContent>
                   <Typography variant="h5" component="div" sx={{color: '#0984e3'}}>
                     SONGVUT NAKRONG
@@ -462,7 +480,7 @@ function Home() {
                     Summary
                   </Typography>
                   <Typography variant="p" component="div">
-                    Hi! I'm 24 years old, A fresh graduate seeking a full-time position in the field of <u>web development</u>, where I can apply my knowledge and skills for continuous improvement.
+                    Hi! I'm 24 years old, A fresh graduate seeking a full-time position in the field of web development, Where I can apply my knowledge and skills for continuous improvement.
                   </Typography>
 
                   <Divider sx={{mt: 2, mb: 1}} />
