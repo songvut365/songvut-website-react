@@ -140,7 +140,7 @@ export const experiences = [
     position: "Intern",
     period: "May 2017 - Sep 2017",
     details: [
-      "Installation, repair, maintenance of CCTV systems"
+      "Installation, repair, maintenance CCTV systems"
     ]
   }
 ]
@@ -190,7 +190,7 @@ export const projects = [
   {
     name:"Hairzer",
     image:"https://raw.githubusercontent.com/songvut365/hairzer/master/image/home-page.jpg",
-    detail:"Hairzer - Hair Service Management, Web Application",
+    detail:"Hairzer - Hair Service Management, Web Application Online Booking System",
     url:"https://github.com/songvut365/hairzer",
   },
 ]

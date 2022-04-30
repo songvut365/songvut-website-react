@@ -2,8 +2,6 @@ import React from 'react';
 
 import './Home.css';
 
-import Profile from '../assets/profile.jpg';
-
 import { skills, experiences, educations, projects } from './data';
 
 import Skill from './component/Skill';
@@ -12,6 +10,7 @@ import Education from './component/Education';
 import Project from './component/Project';
 
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
@@ -23,6 +22,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
+import DownloadIcon from '@mui/icons-material/Download';
 import EmailIcon from '@mui/icons-material/Email';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -34,7 +34,7 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 function Home() {
   return (
     <div className="Home">
-      <Box sx={{display: 'flex', flexWrap: 'wrap', pt: 4}}>
+      <Box sx={{display: 'flex', flexWrap: 'wrap'}}>
         <Grid 
           container 
           spacing={{ xs: 2, md: 2 }} 
@@ -44,16 +44,16 @@ function Home() {
           {/* Left Section */}
           <Grid item xs={12} sm={4} md={3} lg={2} id="left">
             <Paper 
-              sx={{ position: {xl: 'fixed'}, zIndex: 5, maxWidth: {xl: 0.17}, pt: 4 }} 
-              elevation={0} 
+              sx={{ position: {xl: 'fixed'}, zIndex: 5, maxWidth: {xl: 0.17} }} 
+              elevation={2} 
             >
               <Card sx={{ display: 'flex', flexDirection: 'column', bgcolor: 'white' }} elevation={0} >
                 {/* Personal Information */}
                 <CardActionArea>
                 <CardMedia
                   component="img"
-                  sx={{ width: 1, height: {xl: 350} }}
-                  image={Profile}
+                  sx={{ width: 1, height: {xl: 304} }}
+                  image="/static/profile.jpg"
                   alt="Live from space album cover"
                 />
                 </CardActionArea>
@@ -117,8 +117,16 @@ function Home() {
                     </IconButton>
                   </Stack>
 
-                  <Divider sx={{mt: 2}} />
+                  <Divider sx={{mt: 2, mb: 2}} />
 
+                  <Stack
+                    direction="row"
+                    justifyContent="center"
+                    alignItems="center"
+                    spacing={1}
+                  >
+                    <Button variant="outlined" fullWidth startIcon={<DownloadIcon />} disabled>Resume</Button>
+                  </Stack>
                 </CardContent>
               </Card>
 
@@ -126,8 +134,8 @@ function Home() {
           </Grid>
 
           {/* Right Section */}
-          <Grid item xs={12} sm={8} md={6} lg={5} sx={{pb: 4}} if="right">
-            <Paper sx={{bgcolor: 'white'}} elevation={0}>
+          <Grid item xs={12} sm={8} md={6} lg={5} sx={{pb: 4}} id="right">
+            <Paper sx={{bgcolor: 'white'}} elevation={2}>
 
               {/* Skills */}
               <Box sx={{pt: {lg: 1}, pb: {lg: 1}, pl:{lg: 2}, pr:{lg: 2}}}>
@@ -162,7 +170,6 @@ function Home() {
                 <Typography variant="h4" component="div" sx={{color: '#0984e3', mb: 2}}>
                   PROJECTS
                 </Typography>
-
                 <Project projects={projects} />
               </Box>
             </Paper>

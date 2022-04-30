@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -12,7 +13,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
 function Appbar() {
-  const pages = ['Home', 'About', 'Resume', 'Project', 'Contact'];
+  const pages = ['home', 'resume'];
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -68,8 +69,8 @@ function Appbar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu} href={page} sx={{width: 500}}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page} onClick={handleCloseNavMenu} component={Link} to={page} sx={{width: 1080}}>
+                  <Typography variant="button" textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -90,7 +91,8 @@ function Appbar() {
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ color: 'white', display: 'block' }}
-                href={page}
+                component={Link} 
+                to={page}
               >
                 {page}
               </Button>

@@ -47,7 +47,7 @@ function Skill(props) {
                             maxHeight: 70
                           }}
                         />
-                        <Typography variant="p">{list.name}</Typography>
+                        <Typography variant="p" sx={{fontWeight: 500}}>{list.name}</Typography>
                       </Box>
                     ))}
                 </AccordionDetails>
@@ -75,7 +75,7 @@ function Skill(props) {
                       }}
                     >
                       <Avatar sx={{bgcolor: list.bgcolor, color: list.textcolor }} variant="square">{list.abb}</Avatar>
-                      <Typography variant="p">{list.name} : {list.detail}</Typography>
+                      <Typography variant="p" sx={{fontWeight: 500}}>{list.name} : {list.detail}</Typography>
                     </Box>
                   ))}
                 </AccordionDetails>
