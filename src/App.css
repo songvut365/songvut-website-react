@@ -1,31 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
-
 * {
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 html, body {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 .App {
-  height: 100vh;
+  width: 100%;
+  background-color: whitesmoke;
+  background-color: #E3C1C1;
+  background-image: url("/public/static/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-attachment: fixed; */
+} 
+
+#footer {
   text-align: center;
-  background-color: #212121;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
-}
-
-h1 {
-  margin: 0;
+  background-color: #1B1F23;
+  color: whitesmoke;
+  z-index: 10;
+  position: absolute;
+  width: 100%;
   padding: 0;
-  color: gold;
+  margin: 0;
 }
-
-p {
-  color: white;
-}
-
