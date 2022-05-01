@@ -42,7 +42,7 @@ function Home() {
           sx={{display: 'flex', justifyContent: 'center'}}
         >
           {/* Left Section */}
-          <Grid item xs={12} sm={4} md={3} lg={2} id="left">
+          <Grid item xs={12} sm={5} md={3} lg={2} id="left">
             <Paper 
               sx={{ position: {xl: 'fixed'}, zIndex: 5, maxWidth: {xl: 0.17} }} 
               elevation={2} 
@@ -134,7 +134,7 @@ function Home() {
           </Grid>
 
           {/* Right Section */}
-          <Grid item xs={12} sm={8} md={6} lg={5} sx={{pb: 4}} id="right">
+          <Grid item xs={12} sm={7} md={6} lg={5} sx={{pb: 4}} id="right">
             <Paper sx={{bgcolor: 'white', p: 2}} elevation={2} >
 
               {/* Skills */}
