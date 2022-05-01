@@ -135,11 +135,11 @@ function Home() {
 
           {/* Right Section */}
           <Grid item xs={12} sm={8} md={6} lg={5} sx={{pb: 4}} id="right">
-            <Paper sx={{bgcolor: 'white'}} elevation={2}>
+            <Paper sx={{bgcolor: 'white', p: 2}} elevation={2} >
 
               {/* Skills */}
               <Box sx={{pt: {lg: 1}, pb: {lg: 1}, pl:{lg: 2}, pr:{lg: 2}}}>
-                <Typography variant="h4" component="div" sx={{color: '#0984e3', mt: 3, mb: 3}}>
+                <Typography variant="h4" component="div" sx={{color: '#0984e3'}}>
                   SKILLS
                 </Typography>
                 <Skill skills={skills} />
