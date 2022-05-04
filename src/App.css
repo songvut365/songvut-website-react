@@ -11,7 +11,7 @@ html, body {
   width: 100%;
   background-color: whitesmoke;
   background-color: #E3C1C1;
-  background-image: url("/public/static/bg.jpg");
+  background-image: url("/public/static/bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   /* background-attachment: fixed; */
