@@ -53,7 +53,7 @@ function Home() {
                 <CardMedia
                   component="img"
                   sx={{ width: 1, height: {xl: 304} }}
-                  image="/static/profile.jpg"
+                  image="/static/profile.webp"
                   alt="Live from space album cover"
                 />
                 </CardActionArea>
@@ -61,7 +61,7 @@ function Home() {
                   <Typography variant="h5" component="div" sx={{color: '#0984e3'}}>
                     SONGVUT NAKRONG
                   </Typography>
-                  <Typography variant="p" component="div">
+                  <Typography variant="body1" component="div">
                     WEB DEVELOPER
                   </Typography>
 
@@ -71,7 +71,7 @@ function Home() {
                   <Typography variant="h6" component="div">
                     Summary
                   </Typography>
-                  <Typography variant="p" component="div">
+                  <Typography variant="body1" component="div">
                     Hi! I'm 24 years old, A fresh graduate seeking a full-time position in the field of web development, Where I can apply my knowledge and skills for continuous improvement.
                   </Typography>
 

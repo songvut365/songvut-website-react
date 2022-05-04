@@ -35,14 +35,14 @@ function Experience(props) {
               <Typography variant="h6" component="div">
                 {experience.location}
               </Typography>
-              <Typography variant="p" component="div">
+              <Typography variant="body1" component="div">
                 {experience.position}
               </Typography>
-              <Typography variant="p" component="div">
+              <Typography variant="body1" component="div">
                 {experience.period}
               </Typography>
               {Array.from(experience.details).map((detail, index) => (
-                <Typography variant="p" component="div" key={index}>
+                <Typography variant="body1" component="div" key={index}>
                   • {detail}
                 </Typography>
               ))}

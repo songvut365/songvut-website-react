@@ -35,13 +35,13 @@ function Education(props) {
               <Typography variant="h6" component="div">
                 {education.location}
               </Typography>
-              <Typography variant="p" component="div">
+              <Typography variant="body1" component="div">
                 {education.level}, {education.major}
               </Typography>
-              <Typography variant="p" component="div">
+              <Typography variant="body1" component="div">
                 {education.period}
               </Typography>
-              <Typography variant="p" component="div">
+              <Typography variant="body1" component="div">
                 GPA: {education.gpa}
               </Typography>
             </TimelineContent>
