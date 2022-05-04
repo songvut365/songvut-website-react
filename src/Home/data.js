@@ -4,19 +4,19 @@ export const skills = [
     lists: [
       {
         name: "JavaScript",
-        image: "/static/icon/javascript.png"
+        image: "/static/icon/javascript.webp"
       },
       {
         name: "Python",
-        image: "/static/icon/python.png"
+        image: "/static/icon/python.webp"
       },
       {
         name: "Golang",
-        image: "/static/icon/go.png"
+        image: "/static/icon/go.webp"
       },
       {
         name: "Java",
-        image: "/static/icon/java.png"
+        image: "/static/icon/java.webp"
       }
     ]
   },
@@ -25,15 +25,15 @@ export const skills = [
     lists: [
       {
         name: "Express.js",
-        image: "/static/icon/express.png"
+        image: "/static/icon/express.webp"
       },
       {
         name: "Django",
-        image: "/static/icon/django.png"
+        image: "/static/icon/django.webp"
       },
       {
         name: "Fiber",
-        image: "/static/icon/fiber.png"
+        image: "/static/icon/fiber.webp"
       },
     ]
   },
@@ -42,19 +42,19 @@ export const skills = [
     lists: [
       {
         name: "Vue.js",
-        image: "/static/icon/vue.png"
+        image: "/static/icon/vue.webp"
       },
       {
         name: "Vuetify",
-        image: "/static/icon/vuetify.png"
+        image: "/static/icon/vuetify.webp"
       },
       {
         name: "React.js",
-        image: "/static/icon/react.png"
+        image: "/static/icon/react.webp"
       },
       {
         name: "MUI",
-        image: "/static/icon/mui.png"
+        image: "/static/icon/mui.webp"
       },
       
     ]
@@ -64,15 +64,19 @@ export const skills = [
     lists: [
       {
         name: "MySQL",
-        image: "/static/icon/mysql.png"
+        image: "/static/icon/mysql.webp"
       },
       {
         name: "MongoDB",
-        image: "/static/icon/mongodb.png"
+        image: "/static/icon/mongodb.webp"
+      },
+      {
+        name: "Elasticsearch",
+        image: "/static/icon/elastic.webp"
       },
       {
         name: "SQLite",
-        image: "/static/icon/sqlite.png"
+        image: "/static/icon/sqlite.webp"
       },
     ]
   },
@@ -81,19 +85,19 @@ export const skills = [
     lists: [
       {
         name: "Git",
-        image: "/static/icon/git.png"
+        image: "/static/icon/git.webp"
       },
       {
         name: "Docker",
-        image: "/static/icon/docker.png"
+        image: "/static/icon/docker.webp"
       },
       {
         name: "Figma",
-        image: "/static/icon/figma.png"
+        image: "/static/icon/figma.webp"
       },
       {
         name: "Insomnia",
-        image: "/static/icon/insomnia.png"
+        image: "/static/icon/insomnia.webp"
       }
     ]
   },
@@ -165,31 +169,31 @@ export const educations = [
 export const projects = [
   {
     name:"VCAPTCHA",
-    image:"https://avatars.githubusercontent.com/u/89780796?s=200&v=4",
+    image:"/static/project/vcaptcha.webp",
     detail:"Human Verification Service using Voice Recognition The purpose is to create a system to determine that users are human instead of using images",
     url:"https://vcaptcha.work/",
   },
   {
     name:"Search Engine",
-    image:"https://raw.githubusercontent.com/songvut365/search-engine-django-elasticsearch/main/screenshot1.png",
+    image:"/static/project/search-engine.webp",
     detail:"Search Engine Web Application with Django and Elasticsearch, Searching Information about COVID-19",
     url:"https://github.com/songvut365/search-engine-django-elasticsearch",
   },
   {
     name:"Game Store",
-    image:"https://raw.githubusercontent.com/songvut365/GameStore/main/screenshot.jpg", 
+    image:"/static/project/game-store.webp", 
     detail:"Game Store with ASP .NET MVC, Online Store, Shopping cart and Payment",
     url:"https://github.com/songvut365/GameStore",
   },
   {
     name:"DFA ATM",
-    image:"https://raw.githubusercontent.com/songvut365/DFA-ATM/master/screenshot.png",
+    image:"/static/project/dfa-atm.webp",
     detail:"Automatic Teller Machine using Deterministic Finite Automaton, Web application",
     url:"https://dfa-atm.web.app/",
   },
   {
     name:"Hairzer",
-    image:"https://raw.githubusercontent.com/songvut365/hairzer/master/image/home-page.jpg",
+    image:"/static/project/hairzer.webp",
     detail:"Hairzer - Hair Service Management, Web Application Online Booking System",
     url:"https://github.com/songvut365/hairzer",
   },
