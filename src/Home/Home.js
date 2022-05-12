@@ -31,6 +31,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
+import Fade from 'react-reveal/Fade';
+
 function Home() {
   return (
     <div className="Home">
@@ -47,97 +49,101 @@ function Home() {
               sx={{ position: {xl: 'fixed'}, zIndex: 5, maxWidth: {xl: 0.17} }} 
               elevation={2} 
             >
-              <Card sx={{ display: 'flex', flexDirection: 'column', bgcolor: 'white' }} elevation={0} >
-                {/* Personal Information */}
-                <CardActionArea>
-                <CardMedia
-                  component="img"
-                  sx={{ width: 1, height: {xl: 304} }}
-                  image="/static/profile.webp"
-                  alt="Live from space album cover"
-                />
-                </CardActionArea>
-                <CardContent>
-                  <Typography variant="h5" component="div" sx={{color: '#0984e3'}}>
-                    SONGVUT NAKRONG
-                  </Typography>
-                  <Typography variant="body1" component="div">
-                    WEB DEVELOPER
-                  </Typography>
+              <Fade>
+                <Card sx={{ display: 'flex', flexDirection: 'column', bgcolor: 'white' }} elevation={0} >
+                  {/* Personal Information */}
+                  <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    sx={{ width: 1, height: {xl: 304} }}
+                    image="/static/profile.webp"
+                    alt="Live from space album cover"
+                  />
+                  </CardActionArea>
+                  <CardContent>
+                    <Typography variant="h5" component="div" sx={{color: '#0984e3'}}>
+                      SONGVUT NAKRONG
+                    </Typography>
+                    <Typography variant="body1" component="div">
+                      WEB DEVELOPER
+                    </Typography>
 
-                  <Divider sx={{mt: 2, mb: 1}} />
+                    <Divider sx={{mt: 2, mb: 1}} />
 
-                  {/* Summary */}
-                  <Typography variant="h6" component="div">
-                    Summary
-                  </Typography>
-                  <Typography variant="body1" component="div">
-                    Hi! I'm 24 years old, A fresh graduate seeking a full-time position in the field of web development, Where I can apply my knowledge and skills for continuous improvement.
-                  </Typography>
+                    {/* Summary */}
+                    <Typography variant="h6" component="div">
+                      Summary
+                    </Typography>
+                    <Typography variant="body1" component="div">
+                      Hi! I'm 24 years old, A fresh graduate seeking a full-time position in the field of web development, Where I can apply my knowledge and skills for continuous improvement.
+                    </Typography>
 
-                  <Divider sx={{mt: 2, mb: 1}} />
+                    <Divider sx={{mt: 2, mb: 1}} />
 
-                  {/* Contact */}
-                  <Typography variant="h6" component="div">
-                    Contact
-                  </Typography>
-                  <Box sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
-                    <EmailIcon color="action" fontSize="small"/>
-                    <span>songvut.nakrong@gmail.com</span><br></br>
-                  </Box>
-                  <Box sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
-                    <LocalPhoneIcon color="action" fontSize="small" />
-                    <span>096 615 3710</span><br></br>
-                  </Box>
-                  <Box sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
-                    <LocationOnIcon color="action" fontSize="small" />
-                    <span>Bangkok, Thailand</span><br></br>
-                  </Box>
-                  
-                  <Divider sx={{mt: 2, mb: 2}} />
+                    {/* Contact */}
+                    <Typography variant="h6" component="div">
+                      Contact
+                    </Typography>
+                    <Box sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
+                      <EmailIcon color="action" fontSize="small"/>
+                      <span>songvut.nakrong@gmail.com</span><br></br>
+                    </Box>
+                    <Box sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
+                      <LocalPhoneIcon color="action" fontSize="small" />
+                      <span>096 615 3710</span><br></br>
+                    </Box>
+                    <Box sx={{display: 'flex', mb: 1, alignItems: 'center', gap: 1}}>
+                      <LocationOnIcon color="action" fontSize="small" />
+                      <span>Bangkok, Thailand</span><br></br>
+                    </Box>
+                    
+                    <Divider sx={{mt: 2, mb: 2}} />
 
-                  {/* Social Media */}
-                  <Stack
-                    direction="row"
-                    justifyContent="center"
-                    alignItems="center"
-                    spacing={1}
-                  >
-                    <IconButton aria-label="github" href="https://www.github.com/songvut365" target="_blank">
-                      <GitHubIcon />
-                    </IconButton>
-                    <IconButton aria-label="linkedin" href="https://www.linkedin.com/in/songvut-nakrong/"  target="_blank">
-                      <LinkedInIcon />
-                    </IconButton>
-                    <IconButton aria-label="facebook" href="https://www.facebook.com/songvut.365/" target="_blank">
-                      <FacebookIcon />
-                    </IconButton>
-                    <IconButton aria-label="instagram" href="https://www.instagram.com/songvut.365/" target="_blank">
-                      <InstagramIcon />
-                    </IconButton>
-                  </Stack>
+                    {/* Social Media */}
+                    <Stack
+                      direction="row"
+                      justifyContent="center"
+                      alignItems="center"
+                      spacing={1}
+                    >
+                      <IconButton aria-label="github" href="https://www.github.com/songvut365" target="_blank">
+                        <GitHubIcon />
+                      </IconButton>
+                      <IconButton aria-label="linkedin" href="https://www.linkedin.com/in/songvut-nakrong/"  target="_blank">
+                        <LinkedInIcon />
+                      </IconButton>
+                      <IconButton aria-label="facebook" href="https://www.facebook.com/songvut365/" target="_blank">
+                        <FacebookIcon />
+                      </IconButton>
+                      <IconButton aria-label="instagram" href="https://www.instagram.com/songvut.365/" target="_blank">
+                        <InstagramIcon />
+                      </IconButton>
+                    </Stack>
 
-                  <Divider sx={{mt: 2, mb: 2}} />
+                    <Divider sx={{mt: 2, mb: 2}} />
 
-                  <Stack
-                    direction="row"
-                    justifyContent="center"
-                    alignItems="center"
-                    spacing={1}
-                  >
-                    <Button variant="outlined" fullWidth startIcon={<DownloadIcon />} disabled>Resume</Button>
-                  </Stack>
-                </CardContent>
-              </Card>
+                    <Stack
+                      direction="row"
+                      justifyContent="center"
+                      alignItems="center"
+                      spacing={1}
+                    >
+                      <Button variant="outlined" fullWidth startIcon={<DownloadIcon />} disabled>Resume</Button>
+                    </Stack>
+                  </CardContent>
+                </Card>
+              </Fade>
 
             </Paper>
           </Grid>
+
 
           {/* Right Section */}
           <Grid item xs={12} sm={7} md={6} lg={5} sx={{pb: 4}} id="right">
             <Paper sx={{bgcolor: 'white', p: 2}} elevation={2} >
 
               {/* Skills */}
+              <Fade>
               <Box sx={{pt: {lg: 1}, pb: {lg: 1}, pl:{lg: 2}, pr:{lg: 2}}}>
                 <Typography variant="h4" component="div" sx={{color: '#0984e3'}}>
                   SKILLS
@@ -146,8 +152,10 @@ function Home() {
 
                 <Divider sx={{mt: 5}}/>
               </Box>
+              </Fade>
 
               {/* Work experience */}
+              <Fade>
               <Box sx={{pt: 3, pb: {lg: 1}, pl:{lg: 2}, pr:{lg: 2}}}>
                 <Typography variant="h4" component="div" sx={{color: '#0984e3'}}>
                   WORK EXPERIENCE
@@ -155,8 +163,10 @@ function Home() {
                 <Experience experiences={experiences} />
                 <Divider />
               </Box>
+              </Fade>
                         
               {/* Education */}
+              <Fade>
               <Box sx={{pt: 3, pb: {lg: 1}, pl:{lg: 2}, pr:{lg: 2}}}>
                 <Typography variant="h4" component="div" sx={{color: '#0984e3'}}>
                   EDUCATION
@@ -164,14 +174,17 @@ function Home() {
                 <Education educations={educations} />
                 <Divider />
               </Box>
+              </Fade>
 
               {/* Projects */}
+              <Fade>
               <Box sx={{pt: 3, pb: {lg: 1}, pl:{lg: 2}, pr:{lg: 2}}}>
                 <Typography variant="h4" component="div" sx={{color: '#0984e3', mb: 2}}>
                   PROJECTS
                 </Typography>
                 <Project projects={projects} />
               </Box>
+              </Fade>
             </Paper>
           </Grid>
         </Grid>
