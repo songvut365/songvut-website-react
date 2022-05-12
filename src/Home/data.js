@@ -7,12 +7,12 @@ export const skills = [
         image: "/static/icon/javascript.webp"
       },
       {
-        name: "Python",
-        image: "/static/icon/python.webp"
-      },
-      {
         name: "Golang",
         image: "/static/icon/go.webp"
+      },
+      {
+        name: "Python",
+        image: "/static/icon/python.webp"
       },
       {
         name: "Java",
@@ -28,12 +28,12 @@ export const skills = [
         image: "/static/icon/express.webp"
       },
       {
-        name: "Django",
-        image: "/static/icon/django.webp"
-      },
-      {
         name: "Fiber",
         image: "/static/icon/fiber.webp"
+      },
+      {
+        name: "Django",
+        image: "/static/icon/django.webp"
       },
     ]
   },
@@ -71,13 +71,13 @@ export const skills = [
         image: "/static/icon/mongodb.webp"
       },
       {
-        name: "Elasticsearch",
-        image: "/static/icon/elastic.webp"
-      },
-      {
         name: "SQLite",
         image: "/static/icon/sqlite.webp"
       },
+      // {
+      //   name: "Elasticsearch",
+      //   image: "/static/icon/elastic.webp"
+      // },
     ]
   },
   {

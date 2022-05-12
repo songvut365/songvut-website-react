@@ -9,6 +9,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
+import Fade from 'react-reveal/Fade';
+
 function Project(props) {
   return (
     <Grid
@@ -18,36 +20,40 @@ function Project(props) {
     >
       {Array.from(props.projects).map((project, index) => (
         <Grid item xs={12} sm={12} md={6} lg={6} xl={4} key={index} >
-          <Card sx={{height: 1, display: 'flex', flexDirection: 'column'}} >
-            <CardActionArea href={project.url} target="_blank" >
-              <CardMedia
-                component="img"
-                height="200"
-                image={project.image}
-                alt="project image"
-              />
-            </CardActionArea>
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {project.name}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {project.detail}
-              </Typography>
-            </CardContent>
-            <CardActions sx={{display: 'flex', justifyContent: 'flex-end', flexGrow: 1, alignItems: 'flex-end'}}>
-              <Button size="small" href={project.url} target="_blank">More Details</Button>
-            </CardActions>
-          </Card>
+            <Card sx={{height: 1, display: 'flex', flexDirection: 'column'}} >
+             <Fade>
+                <CardActionArea href={project.url} target="_blank" >
+                  <CardMedia
+                    component="img"
+                    height="200"
+                    image={project.image}
+                    alt="project image"
+                  />
+                </CardActionArea>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {project.name}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {project.detail}
+                  </Typography>
+                </CardContent>
+                <CardActions sx={{display: 'flex', justifyContent: 'flex-end', flexGrow: 1, alignItems: 'flex-end'}}>
+                  <Button size="small" href={project.url} target="_blank">More Details</Button>
+                </CardActions>
+              </Fade>
+            </Card>
         </Grid>
       ))}
 
       <Grid item xs={12} sm={12} md={12} lg={12}
         sx={{display: 'flex', justifyContent: 'center', mt: 3, mb: 3}}
       >
-        <Button variant="outlined" href="https://github.com/songvut365" target="_blank">
-          More Projects
-        </Button>
+        <Fade>
+          <Button variant="outlined" href="https://github.com/songvut365" target="_blank">
+            More Projects
+          </Button>
+        </Fade>
       </Grid>
     </Grid>
   )
