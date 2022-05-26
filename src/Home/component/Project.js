@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
@@ -20,25 +21,29 @@ function Project(props) {
     >
       {Array.from(props.projects).map((project, index) => (
         <Grid item xs={12} sm={12} md={6} lg={6} xl={4} key={index} >
-            <Card sx={{height: 1, display: 'flex', flexDirection: 'column'}} >
+            <Card sx={{height: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}} >
              <Fade>
-                <CardActionArea href={project.url} target="_blank" >
-                  <CardMedia
-                    component="img"
-                    height="200"
-                    image={project.image}
-                    alt="project image"
-                  />
-                </CardActionArea>
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {project.name}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {project.detail}
-                  </Typography>
-                </CardContent>
-                <CardActions sx={{display: 'flex', justifyContent: 'flex-end', flexGrow: 1, alignItems: 'flex-end'}}>
+                <Box>
+                  <CardActionArea href={project.url} target="_blank" >
+                    <CardMedia
+                      component="img"
+                      height="200"
+                      image={project.image}
+                      alt="project image"
+                    />
+                  </CardActionArea>
+
+                  <CardContent >
+                    <Typography gutterBottom variant="h5" component="div">
+                      {project.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {project.detail}
+                    </Typography>
+                  </CardContent>
+                </Box>
+
+                <CardActions sx={{display: 'flex', justifyContent: 'flex-end', flexGrow: 1, alignItems: 'flex-end', justifySelf:'flex-end'}}>
                   <Button size="small" href={project.url} target="_blank">More Details</Button>
                 </CardActions>
               </Fade>
