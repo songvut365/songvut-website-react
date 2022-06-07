@@ -25,8 +25,7 @@ function Skill(props) {
               <AccordionDetails 
                 sx={{
                   display: 'flex', 
-                  flexWrap: 'wrap', 
-                  maxWidth: 1,  
+                  flexWrap: 'wrap',
                   gap: {xs: 1, md: 3, xl: 8},
                   justifyContent: {xs: 'space-around', lg: "center"}
                 }}
@@ -42,15 +41,7 @@ function Skill(props) {
                         gap: 1,
                         textAlign: 'center'}}
                     >
-                      <Avatar 
-                        src={list.image} 
-                        variant="square" 
-                        sx={{
-                          width: 1,
-                          minHeight: 70, 
-                          maxHeight: 70
-                        }}
-                      />
+                      <img src={list.image} width="80px" alt={list.name} />
                       <Typography variant="caption" sx={{fontWeight: 500}}>{list.name}</Typography>
                     </Box>
                   ))}
