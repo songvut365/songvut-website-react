@@ -1,11 +1,12 @@
-import React from 'react'
-import './App.css'
+import React from 'react';
+
+import Home from './views/Home';
 
 function App() {
 
   return (
-    <div className="App">
-      <h1 className='text-3xl font-bold underline'>Songvut Website</h1>
+    <div className="bg-slate-900 text-slate-200 p-4">
+      <Home />
     </div>
   )
 }
