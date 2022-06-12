@@ -7,7 +7,7 @@ export default function Home() {
     <div className='container mx-auto md:gap-6 md:flex justify-center'>
       <InfoCard />
 
-      <div className='rounded-lg shadow-lg bg-slate-800 p-4 max-w-3xl w-full'>        
+      <div className='rounded-lg shadow-lg bg-slate-800 p-4 max-w-2xl w-full'>        
         <Skills />
       </div>
     </div>
