@@ -10,3 +10,116 @@ export const information = {
   facebookLink: "https://www.facebook.com/songvut365/",
   instagramLink: "https://www.instagram.com/songvut.365/",
 }
+
+export const skills = [
+  {
+    "name": "Programming Language",
+    "details": [
+      {
+        "name": "Go",
+        "image": ""
+      },
+      {
+        "name": "Javascript",
+        "image": ""
+      },
+      {
+        "name": "Python",
+        "image": ""
+      },
+    ]
+  },
+  {
+    "name": "Back-end",
+    "details": [
+      {
+        "name": "Fiber",
+        "image": ""
+      },
+      {
+        "name": "Express.js",
+        "image": ""
+      },
+      {
+        "name": "FastAPI",
+        "image": ""
+      },
+    ]
+  },
+  {
+    "name": "Front-end",
+    "details": [
+      {
+        "name": "React.js",
+        "image": ""
+      },
+      {
+        "name": "Material UI",
+        "image": ""
+      },
+      {
+        "name": "Vue.js",
+        "image": ""
+      },
+      {
+        "name": "Vuetify",
+        "image": ""
+      },
+      {
+        "name": "Tailwind CSS",
+        "image": ""
+      },
+    ]
+  },
+  {
+    "name": "Database",
+    "details": [
+      {
+        "name": "MySQL",
+        "image": ""
+      },
+      {
+        "name": "MongoDB",
+        "image": ""
+      },
+      {
+        "name": "SQLite",
+        "image": ""
+      },
+    ]
+  },
+  {
+    "name": "Tools",
+    "details": [
+      {
+        "name": "Docker",
+        "image": ""
+      },
+      {
+        "name": "RabbitMQ",
+        "image": ""
+      },
+      {
+        "name": "Figma",
+        "image": ""
+      },
+      {
+        "name": "Postman",
+        "image": ""
+      },
+    ]
+  },
+  {
+    "name": "Language Proficiency",
+    "details": [
+      {
+        "name": "Thai",
+        "image": ""
+      },
+      {
+        "name": "English",
+        "image": ""
+      },
+    ]
+  },
+]
