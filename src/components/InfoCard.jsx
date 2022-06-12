@@ -5,7 +5,7 @@ import { information } from '../assets/data'
 export default function InfoCard() {
   return (
     <div className='max-w-sm md:max-w-xs h-fit rounded-lg shadow-lg bg-slate-800 mb-4'>
-      <img src="/src/assets/profile.webp" className='rounded-t-lg' />
+      <img src={information.image} className='rounded-t-lg' />
       
       <div className='divide-y divide-slate-500 px-3'>
         <div className='py-4'>

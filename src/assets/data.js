@@ -1,4 +1,5 @@
 export const information = {
+  image: "/assets/profile.webp",
   name: "songvut nakrong",
   position: "web developer",
   summary: "Hi! I'm 24 years old, A fresh graduate seeking a full-time position in the field of web development, Where I can apply my knowledge and skills for continuous improvement.",
@@ -17,15 +18,15 @@ export const skills = [
     "details": [
       {
         "name": "Go",
-        "image": "/src/assets/icon/go.webp"
+        "image": "/assets/icon/go.webp"
       },
       {
         "name": "Javascript",
-        "image": "/src/assets/icon/javascript.webp"
+        "image": "/assets/icon/javascript.webp"
       },
       {
         "name": "Python",
-        "image": "/src/assets/icon/python.webp"
+        "image": "/assets/icon/python.webp"
       },
     ]
   },
@@ -34,15 +35,15 @@ export const skills = [
     "details": [
       {
         "name": "Fiber",
-        "image": "/src/assets/icon/fiber.webp"
+        "image": "/assets/icon/fiber.webp"
       },
       {
         "name": "Express.js",
-        "image": "/src/assets/icon/express.webp"
+        "image": "/assets/icon/express.webp"
       },
       {
         "name": "Django",
-        "image": "/src/assets/icon/django.webp"
+        "image": "/assets/icon/django.webp"
       },
     ]
   },
@@ -51,23 +52,23 @@ export const skills = [
     "details": [
       {
         "name": "React.js",
-        "image": "/src/assets/icon/react.webp"
+        "image": "/assets/icon/react.webp"
       },
       {
         "name": "Material UI",
-        "image": "/src/assets/icon/mui.webp"
+        "image": "/assets/icon/mui.webp"
       },
       {
         "name": "Vue.js",
-        "image": "/src/assets/icon/vue.webp"
+        "image": "/assets/icon/vue.webp"
       },
       {
         "name": "Vuetify",
-        "image": "/src/assets/icon/vuetify.webp"
+        "image": "/assets/icon/vuetify.webp"
       },
       {
         "name": "Tailwind CSS",
-        "image": "/src/assets/icon/tailwind.webp"
+        "image": "/assets/icon/tailwind.webp"
       },
     ]
   },
@@ -76,15 +77,15 @@ export const skills = [
     "details": [
       {
         "name": "MySQL",
-        "image": "/src/assets/icon/mysql.webp"
+        "image": "/assets/icon/mysql.webp"
       },
       {
         "name": "MongoDB",
-        "image": "/src/assets/icon/mongodb.webp"
+        "image": "/assets/icon/mongodb.webp"
       },
       {
         "name": "SQLite",
-        "image": "/src/assets/icon/sqlite.webp"
+        "image": "/assets/icon/sqlite.webp"
       },
     ]
   },
@@ -93,19 +94,19 @@ export const skills = [
     "details": [
       {
         "name": "Docker",
-        "image": "/src/assets/icon/docker.webp"
+        "image": "/assets/icon/docker.webp"
       },
       {
         "name": "RabbitMQ",
-        "image": "/src/assets/icon/rabbitmq.webp"
+        "image": "/assets/icon/rabbitmq.webp"
       },
       {
         "name": "Postman",
-        "image": "/src/assets/icon/postman.webp"
+        "image": "/assets/icon/postman.webp"
       },
       {
         "name": "Figma",
-        "image": "/src/assets/icon/figma.webp"
+        "image": "/assets/icon/figma.webp"
       },
     ]
   },
