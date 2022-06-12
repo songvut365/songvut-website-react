@@ -17,15 +17,15 @@ export const skills = [
     "details": [
       {
         "name": "Go",
-        "image": ""
+        "image": "/src/assets/icon/go.webp"
       },
       {
         "name": "Javascript",
-        "image": ""
+        "image": "/src/assets/icon/javascript.webp"
       },
       {
         "name": "Python",
-        "image": ""
+        "image": "/src/assets/icon/python.webp"
       },
     ]
   },
@@ -34,15 +34,15 @@ export const skills = [
     "details": [
       {
         "name": "Fiber",
-        "image": ""
+        "image": "/src/assets/icon/fiber.webp"
       },
       {
         "name": "Express.js",
-        "image": ""
+        "image": "/src/assets/icon/express.webp"
       },
       {
-        "name": "FastAPI",
-        "image": ""
+        "name": "Django",
+        "image": "/src/assets/icon/django.webp"
       },
     ]
   },
@@ -51,23 +51,23 @@ export const skills = [
     "details": [
       {
         "name": "React.js",
-        "image": ""
+        "image": "/src/assets/icon/react.webp"
       },
       {
         "name": "Material UI",
-        "image": ""
+        "image": "/src/assets/icon/mui.webp"
       },
       {
         "name": "Vue.js",
-        "image": ""
+        "image": "/src/assets/icon/vue.webp"
       },
       {
         "name": "Vuetify",
-        "image": ""
+        "image": "/src/assets/icon/vuetify.webp"
       },
       {
         "name": "Tailwind CSS",
-        "image": ""
+        "image": "/src/assets/icon/tailwind.webp"
       },
     ]
   },
@@ -76,15 +76,15 @@ export const skills = [
     "details": [
       {
         "name": "MySQL",
-        "image": ""
+        "image": "/src/assets/icon/mysql.webp"
       },
       {
         "name": "MongoDB",
-        "image": ""
+        "image": "/src/assets/icon/mongodb.webp"
       },
       {
         "name": "SQLite",
-        "image": ""
+        "image": "/src/assets/icon/sqlite.webp"
       },
     ]
   },
@@ -93,19 +93,19 @@ export const skills = [
     "details": [
       {
         "name": "Docker",
-        "image": ""
+        "image": "/src/assets/icon/docker.webp"
       },
       {
         "name": "RabbitMQ",
-        "image": ""
-      },
-      {
-        "name": "Figma",
-        "image": ""
+        "image": "/src/assets/icon/rabbitmq.webp"
       },
       {
         "name": "Postman",
-        "image": ""
+        "image": "/src/assets/icon/postman.webp"
+      },
+      {
+        "name": "Figma",
+        "image": "/src/assets/icon/figma.webp"
       },
     ]
   },
@@ -114,11 +114,15 @@ export const skills = [
     "details": [
       {
         "name": "Thai",
-        "image": ""
+        "short": "TH",
+        "level": "Native",
+        "color": "bg-red-800"
       },
       {
         "name": "English",
-        "image": ""
+        "short": "EN",
+        "level": "CEFR B1",
+        "color": "bg-blue-900"
       },
     ]
   },
