@@ -7,7 +7,7 @@ export default function Education() {
     <div className='py-4'>
       <h1 className='text-3xl font-semibold text-blue-500 mb-4'>EDUCATION</h1>
 
-      <div className='border rounded-lg border-gray-700 bg-gray-800 py-4'>
+      <div className='border rounded-lg border-gray-700 bg-gray-800 py-4 mb-2'>
         {education.map(e => (
           <div className='flex' key={e.name}> 
             <div className='pt-2 px-4 flex flex-col'>
