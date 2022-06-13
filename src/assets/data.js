@@ -145,3 +145,43 @@ export const education = [
     "gpa": "3.59",
   }
 ]
+
+export const projects = [
+  {
+    "name": "VCAPTCHA",
+    "image": "/assets/project/vcaptcha.webp",
+    "detail": "Human Verification Service using Voice Recognition The purpose is to create a system to determine that users are human instead of using images",
+    "link": "https://vcaptcha.work/",
+  },
+  {
+    "name": "Nihon Vocabulary Server",
+    "image": "/assets/project/nihon-vocab.webp",
+    "detail": "Server for Nihon Vocabulary, Japanese vocabulary application API",
+    "link": "https://github.com/songvut365/nihon-vocabulary-server",
+  },
+  {
+    "name": "Election Application",
+    "image": "/assets/project/election-app.webp",
+    "detail": "Voting application with React and Golang, Microservice design",
+    "link": "https://github.com/songvut365/election-application",
+  },
+  {
+    "name": "Search Engine",
+    "image": "/assets/project/search-engine.webp",
+    "detail": "Search Engine Web Application with Django and Elasticsearch, Searching Information about COVID-19",
+    "link": "https://github.com/songvut365/search-engine-django-elasticsearch",
+  },
+  {
+    "name": "Game Store",
+    "image": "/assets/project/game-store.webp",
+    "detail": "Game Store with ASP .NET MVC, Online Store, Shopping cart and Payment",
+    "link": "https://github.com/songvut365/GameStore",
+  },
+  {
+    "name": "DFA ATM",
+    "image": "/assets/project/dfa-atm.webp",
+    "detail": "Automatic Teller Machine using Deterministic Finite Automaton, Web application",
+    "link": "https://github.com/songvut365/DFA-ATM",
+  },
+  
+]
