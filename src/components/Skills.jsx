@@ -3,7 +3,7 @@ import { skills } from '../assets/data'
 
 export default function Skills() {
   return (
-    <div>
+    <div className='pb-2'>
       <h1 className='text-3xl font-semibold text-blue-500'>SKILLS</h1>
 
       <div className="hs-accordion-group my-4" data-hs-accordion-always-open>
@@ -39,8 +39,6 @@ export default function Skills() {
                 </div>
               </div>
             )}
-            
-
           </div>
         ))}
         

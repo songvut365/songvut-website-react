@@ -15,7 +15,7 @@ export default function InfoCard() {
 
         <div className='py-4'>
           <p className='text-xl font-semibold pb-2 text-white'>Summary</p>
-          <p className='first-letter:pl-4 text-slate-200'>{information.summary}</p>
+          <p className='first-letter:pl-4'>{information.summary}</p>
         </div>
 
         <div className='py-4'>
