@@ -128,3 +128,20 @@ export const skills = [
     ]
   },
 ]
+
+export const education = [
+  {
+    "name": "King Mongkut's Institute of Technology Ladkrabang",
+    "degree": "Bachelor of Engineering",
+    "major": "Computer Engineering",
+    "date": "Aug 2019 - May 2022",
+    "gpa": "3.50",
+  },
+  {
+    "name": "Hatyai Technical College",
+    "degree": "High Vocational Certificate",
+    "major": "Computer Technology",
+    "date": "May 2016 - Mar 2018",
+    "gpa": "3.59",
+  }
+]
