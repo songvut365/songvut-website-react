@@ -9,7 +9,7 @@ export default function Project() {
     <div className='py-4'>
       <h1 className='text-3xl font-semibold text-blue-500 mb-4'>PROJECTS</h1>
 
-      <div className='md:grid lg:grid-cols-2 xl:grid-cols-3 gap-4'>
+      <div className='md:grid md:justify-center lg:grid-cols-2  gap-4'>
         {projects.map(project => (
           <ProjectCard key={project.name} project={project} />
         ))}

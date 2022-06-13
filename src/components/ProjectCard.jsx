@@ -4,7 +4,7 @@ export default function ProjectCard(props) {
   const project = props.project;
 
   return (
-    <div className='shadow-lg max-w-sm h-full bg-gray-800 border border-gray-700 rounded-lg mb-4
+    <div className='shadow-lg max-w-md h-full bg-gray-800 border border-gray-700 rounded-lg mb-4
     flex flex-col justify-between pb-2'>
       <div>
         <img src={project.image} className="rounded-t-md w-full h-48 object-cover" />
