@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { information } from '../assets/data'
+import { information } from '../data';
 
 export default function InfoCard() {
   return (
-    <div className='max-w-sm md:max-w-xs h-fit rounded-lg shadow-lg bg-slate-800 mb-4'>
-      <img src={information.image} className='rounded-t-lg' />
+    <div className='max-w-sm md:max-w-xs w-full h-fit object-cover rounded-lg shadow-lg bg-slate-800 mb-4'>
+      <img src={information.image} className='rounded-t-lg w-full hover:cursor-pointer' />
       
       <div className='divide-y divide-slate-500 px-3'>
         <div className='py-4'>
@@ -27,16 +27,16 @@ export default function InfoCard() {
 
         <div className='py-4 flex justify-center gap-7 text-3xl'>
           <a href={information.githubLink} target="_blank">
-            <i className="bi bi-github"></i>
+            <i className="bi bi-github hover:text-gray-400"></i>
           </a>
           <a href={information.linkedInLink} target="_blank">
-            <i className="bi bi-linkedin"></i>
+            <i className="bi bi-linkedin hover:text-gray-400"></i>
           </a>
           <a href={information.facebookLink} target="_blank">
-            <i className="bi bi-facebook"></i>
+            <i className="bi bi-facebook hover:text-gray-400"></i>
           </a>
           <a href={information.instagramLink} target="_blank">
-            <i className="bi bi-instagram"></i>
+            <i className="bi bi-instagram hover:text-gray-400"></i>
           </a>
         </div>
 

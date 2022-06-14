@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { projects } from '../assets/data';
+import { projects } from '../data';
 
 import ProjectCard from './ProjectCard';
 
@@ -16,7 +16,7 @@ export default function Project() {
       </div>
       
       <div className='text-center'>
-        <button className='my-4 uppercase font-semibold border border-slate-200 py-2 px-4 rounded-md shadow-lg
+        <button className='my-4 uppercase font-semibold border border-gray-700 py-2 px-4 rounded-md shadow-lg
         hover:text-slate-400 hover:border-slate-400 active:bg-slate-700 active:text-slate-200'>
           more projects
         </button>
