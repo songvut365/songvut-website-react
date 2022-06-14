@@ -1,7 +1,7 @@
 export const information = {
   image: "/assets/profile.webp",
   name: "songvut nakrong",
-  position: "web developer",
+  position: "software engineer",
   summary: "Hi! I'm 24 years old, A fresh graduate seeking a full-time position in the field of web development, Where I can apply my knowledge and skills for continuous improvement.",
   email: "songvut.nakrong@gmail.com",
   phone: "096-615-3710",

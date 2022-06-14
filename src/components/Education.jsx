@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { education } from '../assets/data';
+import { education } from '../data';
 
 export default function Education() {
   return (
