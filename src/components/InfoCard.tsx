@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../main";
 import { doc, getDoc } from "firebase/firestore";
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
 type Information = {
   image: string;
@@ -16,7 +18,14 @@ type Information = {
   instagramLink: string;
 };
 
-function InfoCard() {
+const InfoCard: React.FC = () => {
+  const { ref, inView } = useInView({ threshold: 0 });
+  const fadeStyle = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? 'translateY(0px)' : 'translateY(0px)',
+    config: { duration: 500 },
+  });
+
   const [information, setInformation] = useState<Information>(
     {} as Information
   );
@@ -32,7 +41,8 @@ function InfoCard() {
   }, []);
 
   return (
-    <div className="max-w-sm md:max-w-xs w-full h-fit object-cover rounded-lg shadow-lg bg-zinc-800 mb-4">
+    <div className="max-w-sm md:max-w-xs w-full h-fit object-cover rounded-lg shadow-lg bg-zinc-800 mb-4">      
+    <animated.div ref={ ref } style={ fadeStyle } >
       {!information.image ? (
         <div className="animate-pulse h-96 bg-zinc-500"></div>
       ) : (
@@ -147,6 +157,7 @@ function InfoCard() {
           </button>
         </div>
       </div>
+    </animated.div>
     </div>
   );
 }

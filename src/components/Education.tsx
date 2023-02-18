@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../main";
 import { doc, getDoc } from "firebase/firestore";
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
 type Education = {
   name: string;
@@ -10,7 +12,14 @@ type Education = {
   gpa: number;
 };
 
-function Education() {
+const Education: React.FC = () => {
+  const { ref, inView } = useInView({ threshold: 0 });
+  const fadeStyle = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? 'translateY(0px)' : 'translateY(0px)',
+    config: { duration: 500 },
+  });
+  
   const [education, setEducation] = useState<Education[]>([]);
 
   const getEducation = async () => {
@@ -26,6 +35,7 @@ function Education() {
 
   return (
     <div className="py-4">
+      <animated.div ref={ref} style={fadeStyle} >
       <h1 className="text-4xl font-semibold text-yellow-300 mb-4">EDUCATION</h1>
 
       {education.length === 0 ? (
@@ -88,6 +98,7 @@ function Education() {
           ))}
         </div>
       )}
+    </animated.div>
     </div>
   );
 }

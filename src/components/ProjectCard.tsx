@@ -1,4 +1,6 @@
 import React from "react";
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
 type Project = {
   cover: string;
@@ -11,8 +13,16 @@ type ProjectCardProps = {
   project?: Project;
 };
 
-function ProjectCard({ project }: ProjectCardProps) {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }: ProjectCardProps) => {
+  const { ref, inView } = useInView({ threshold: 0 });
+  const fadeStyle = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? 'translateY(0px)' : 'translateY(0px)',
+    config: { duration: 500 },
+  });
+
   return (
+    <animated.div ref={ ref } style={ fadeStyle } >
     <div
       className="max-w-md h-full bg-neutral-800 border border-zinc-600 rounded-lg mb-4
     flex flex-col justify-between pb-2"
@@ -74,6 +84,7 @@ function ProjectCard({ project }: ProjectCardProps) {
         </>
       )}
     </div>
+    </animated.div>
   );
 }
 

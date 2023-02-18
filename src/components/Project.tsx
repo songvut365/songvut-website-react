@@ -4,7 +4,7 @@ import { db } from "../main";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import type { Project } from "./ProjectCard";
 
-function Project() {
+const Project: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
 
   const getProjects = async () => {

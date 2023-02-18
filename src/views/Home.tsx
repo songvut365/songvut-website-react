@@ -4,7 +4,7 @@ import Skills from "../components/Skills";
 import Education from "../components/Education";
 import Project from "../components/Project";
 
-function Home() {
+const Home: React.FC = () => {
   return (
     <div className="container mx-auto md:gap-6 md:flex justify-center">
       <InfoCard />

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../main";
 import { doc, getDoc } from "firebase/firestore";
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
 type Skill = {
   name: string;
@@ -15,7 +17,14 @@ type SkillDetail = {
   level: string;
 };
 
-function Skills() {
+const Skills: React.FC = () => {
+  const { ref, inView } = useInView({ threshold: 0 });
+  const fadeStyle = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? 'translateY(0px)' : 'translateY(0px)',
+    config: { duration: 500 },
+  });
+
   const [skills, setSkills] = useState<Skill[]>([]);
 
   const getSkills = async () => {
@@ -31,6 +40,7 @@ function Skills() {
 
   return (
     <div className="pb-2">
+      <animated.div ref={ ref } style={ fadeStyle } >
       <h1 className="text-4xl font-semibold text-yellow-300">SKILLS</h1>
 
       {skills.length === 0 ? (
@@ -114,6 +124,7 @@ function Skills() {
           ))}
         </div>
       )}
+      </animated.div>
     </div>
   );
 }
