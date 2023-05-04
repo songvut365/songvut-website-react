@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { db } from "../main";
-import { doc, getDoc } from "firebase/firestore";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
+import { getData } from "../../../actions/cloude.store";
 
 type Information = {
   image: string;
@@ -26,18 +25,12 @@ const InfoCard: React.FC = () => {
     config: { duration: 500 },
   });
 
-  const [information, setInformation] = useState<Information>(
-    {} as Information
-  );
-
-  const getInformation = async () => {
-    const informationRef = doc(db, "information", "info");
-    const informationDoc = await getDoc(informationRef);
-    setInformation(informationDoc.data() as Information);
-  };
+  const [information, setInformation] = useState<Information>({} as Information);
 
   useEffect(() => {
-    getInformation();
+    getData("information", "info").then(data => {
+      setInformation(data as Information);
+    })
   }, []);
 
   return (

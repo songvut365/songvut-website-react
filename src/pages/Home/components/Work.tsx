@@ -1,0 +1,102 @@
+import React, { useEffect, useState } from "react";
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
+import { getData } from "../../../actions/cloude.store";
+
+type Work = {
+  name: string;
+  position: string;
+  address: string;
+  date: string;
+  description: string[];
+};
+
+const Work: React.FC = () => {
+  const { ref, inView } = useInView({ threshold: 0 });
+  const fadeStyle = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? "translateY(0px)" : "translateY(0px)",
+    config: { duration: 500 },
+  });
+
+  const [works, setWorks] = useState<Work[]>([]);
+
+  
+  useEffect(() => {
+    getData("information", "works").then(data => {
+      setWorks(data?.works ?? []);
+    })
+  }, []);
+
+  return (
+    <div className="py-4">
+      <animated.div ref={ref} style={fadeStyle}>
+        <h1 className="text-3xl font-semibold text-yellow-300 mb-4">WORK EXPERIENCE</h1>
+
+        {works.length === 0 ? (
+          <div className="w-full my-4 px-6 pb-5 border rounded-lg border-zinc-600">
+            <ul className="mt-5 space-y-3 animate-pulse">
+              <li
+                className="h-3 bg-zinc-500 rounded-md"
+                style={{ width: "60%" }}
+              ></li>
+              <li
+                className="h-3 bg-zinc-500 rounded-md"
+                style={{ width: "40%" }}
+              ></li>
+              <li
+                className="h-3 bg-zinc-500 rounded-md"
+                style={{ width: "40%" }}
+              ></li>
+              <li
+                className="h-3 bg-zinc-500 rounded-md"
+                style={{ width: "20%" }}
+              ></li>
+            </ul>
+
+            <ul className="mt-5 space-y-3 animate-pulse">
+              <li
+                className="h-3 bg-zinc-500 rounded-md"
+                style={{ width: "60%" }}
+              ></li>
+              <li
+                className="h-3 bg-zinc-500 rounded-md"
+                style={{ width: "40%" }}
+              ></li>
+              <li
+                className="h-3 bg-zinc-500 rounded-md"
+                style={{ width: "40%" }}
+              ></li>
+              <li
+                className="h-3 bg-zinc-500 rounded-md"
+                style={{ width: "20%" }}
+              ></li>
+            </ul>
+          </div>
+        ) : (
+          <div className="border rounded-lg border-zinc-600 bg-neutral-800 py-4 mb-2">
+            {works.map((work) => (
+              <div className="flex pr-2" key={work.name}>
+                <div className="pt-2 px-4 flex flex-col">
+                  <div className="h-3 w-3 bg-yellow-300 rounded-full mb-2"></div>
+                  <div className="h-full w-0.5 bg-yellow-300 mx-auto"></div>
+                </div>
+                <div>
+                  <p className="font-semibold text-xl text-white">
+                    {work.position}
+                  </p>
+                  <p className="font-semibold text-lg text-white">
+                    {work.name} - {work.address}
+                  </p>
+                  <p className="text-white">{work.date}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </animated.div>
+    </div>
+  );
+};
+
+export default Work;

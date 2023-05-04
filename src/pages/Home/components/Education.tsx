@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { db } from "../main";
-import { doc, getDoc } from "firebase/firestore";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
+import { getData } from "../../../actions/cloude.store";
 
 type Education = {
   name: string;
@@ -22,21 +21,16 @@ const Education: React.FC = () => {
   
   const [education, setEducation] = useState<Education[]>([]);
 
-  const getEducation = async () => {
-    const educationRef = doc(db, "information", "education");
-    const educationDoc = await getDoc(educationRef);
-    const data = educationDoc.data();
-    setEducation(data?.education ?? []);
-  };
-
   useEffect(() => {
-    getEducation();
+    getData("information", "education").then(data => {
+      setEducation(data?.education ?? []);
+    })
   }, []);
 
   return (
     <div className="py-4">
       <animated.div ref={ref} style={fadeStyle} >
-      <h1 className="text-4xl font-semibold text-yellow-300 mb-4">EDUCATION</h1>
+      <h1 className="text-3xl font-semibold text-yellow-300 mb-4">EDUCATION</h1>
 
       {education.length === 0 ? (
         <div className="w-full my-4 px-6 pb-5 border rounded-lg border-zinc-600">

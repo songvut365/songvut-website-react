@@ -1,21 +1,15 @@
 import React, { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
-import { db } from "../main";
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import type { Project } from "./ProjectCard";
+import { getDataArray } from "../../../actions/cloude.store";
 
 const Project: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
 
-  const getProjects = async () => {
-    const q = query(collection(db, "projects"), orderBy("id"));
-    const querySnapshot = await getDocs(q);
-    const allProjects = querySnapshot.docs.map((doc) => doc.data() as Project);
-    setProjects(allProjects);
-  };
-
   useEffect(() => {
-    getProjects();
+    getDataArray("projects", "id").then(data => {
+      setProjects(data)
+    })
   }, []);
 
   return (

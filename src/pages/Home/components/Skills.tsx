@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { db } from "../main";
-import { doc, getDoc } from "firebase/firestore";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
+import { getData } from "../../../actions/cloude.store";
 
 type Skill = {
   name: string;
@@ -27,21 +26,16 @@ const Skills: React.FC = () => {
 
   const [skills, setSkills] = useState<Skill[]>([]);
 
-  const getSkills = async () => {
-    const skillsRef = doc(db, "information", "skills");
-    const skillsDoc = await getDoc(skillsRef);
-    const data = skillsDoc.data();
-    setSkills(data?.skills ?? []);
-  };
-
   useEffect(() => {
-    getSkills();
+    getData("information", "skills").then(data => {
+      setSkills(data?.skills ?? []);
+    })
   }, []);
 
   return (
     <div className="pb-2">
       <animated.div ref={ ref } style={ fadeStyle } >
-      <h1 className="text-4xl font-semibold text-yellow-300">SKILLS</h1>
+      <h1 className="text-3xl font-semibold text-yellow-300">SKILLS</h1>
 
       {skills.length === 0 ? (
         // if skills is empty
@@ -72,7 +66,7 @@ const Skills: React.FC = () => {
               key={skill.name}
             >
               <button
-                className="hs-accordion-toggle inline-flex items-center gap-x-3 w-full font-semibold text-left text-lg transition py-4 px-5  hs-accordion-active:text-yellow-500 text-white hover:text-zinc-400"
+                className="hs-accordion-toggle inline-flex items-center gap-x-3 w-full font-semibold text-left text-lg transition py-4 px-5  hs-accordion-active:text-white text-zinc-300 hover:text-zinc-400"
                 aria-controls="hs-basic-bordered-collapse-two"
               >
                 {skill.name}
@@ -110,9 +104,9 @@ const Skills: React.FC = () => {
                   className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                   aria-labelledby="hs-bordered-heading-two"
                 >
-                  <div className="pb-4 px-5 flex text-center justify-center flex-wrap gap-8 box-border">
+                  <div className="pb-4 px-5 flex text-center justify-center flex-wrap self-center gap-8 box-border">
                     {skill.details.map((detail) => (
-                      <div key={detail.name}>
+                      <div key={detail.name} id={detail.name} className="flex flex-col  items-center">
                         <img src={detail.image} className="h-16" />
                         <p className="text-sm font-semibold">{detail.name}</p>
                       </div>

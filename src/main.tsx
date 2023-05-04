@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import "preline";
 
@@ -13,6 +12,5 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <App />
-);
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+root.render(<App />)

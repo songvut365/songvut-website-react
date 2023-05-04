@@ -1,8 +1,9 @@
 import React from "react";
-import InfoCard from "../components/InfoCard";
-import Skills from "../components/Skills";
-import Education from "../components/Education";
-import Project from "../components/Project";
+import InfoCard from "./components/InfoCard";
+import Skills from "./components/Skills";
+import Work from "./components/Work";
+import Education from "./components/Education";
+import Project from "./components/Project";
 
 const Home: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
 
       <div className="rounded-lg shadow-lg bg-zinc-800 p-4 max-w-3xl w-full divide-y divide-zinc-600">
         <Skills />
+        <Work />
         <Education />
         <Project />
       </div>
