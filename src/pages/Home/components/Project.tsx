@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useRecoilState } from "recoil";
+
 import ProjectCard from "./ProjectCard";
-import type { Project } from "./ProjectCard";
 import { getDataArray } from "../../../actions/cloude.store";
+import { projectState } from "../../../recoils/Home/atom";
 
 const Project: React.FC = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
+  const [projects, setProjects] = useRecoilState(projectState);
 
   useEffect(() => {
     getDataArray("projects", "id").then(data => {
-      setProjects(data)
+      setProjects(data);
     })
   }, []);
 

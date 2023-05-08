@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
-import { getData } from "../../../actions/cloude.store";
+import { useRecoilState } from "recoil";
 
-type Education = {
-  name: string;
-  degree: string;
-  major: string;
-  date: string;
-  gpa: number;
-};
+import { getData } from "../../../actions/cloude.store";
+import { educationState } from "../../../recoils/Home/atom";
 
 const Education: React.FC = () => {
   const { ref, inView } = useInView({ threshold: 0 });
@@ -19,7 +14,7 @@ const Education: React.FC = () => {
     config: { duration: 500 },
   });
   
-  const [education, setEducation] = useState<Education[]>([]);
+  const [education, setEducation] = useRecoilState(educationState);
 
   useEffect(() => {
     getData("information", "education").then(data => {
@@ -76,8 +71,8 @@ const Education: React.FC = () => {
         <div className="border rounded-lg border-zinc-600 bg-neutral-800 py-4 mb-2">
           {education.map((e) => (
             <div className="flex pr-2" key={e.name}>
-              <div className="pt-2 px-4 flex flex-col">
-                <div className="h-4 w-3 bg-yellow-300 rounded-full mb-2"></div>
+              <div className="pt-2 px-4 flex flex-col text-yellow-300 text-xs">
+                <i className="bi bi-circle-fill mb-2"></i>
                 <div className="h-full w-0.5 bg-yellow-300 mx-auto"></div>
               </div>
               <div>

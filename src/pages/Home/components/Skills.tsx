@@ -1,20 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
+import { useRecoilState } from "recoil";
+
 import { getData } from "../../../actions/cloude.store";
-
-type Skill = {
-  name: string;
-  details: SkillDetail[];
-};
-
-type SkillDetail = {
-  name: string;
-  image: string;
-  color: string;
-  short: string;
-  level: string;
-};
+import { skillState } from "../../../recoils/Home/atom";
 
 const Skills: React.FC = () => {
   const { ref, inView } = useInView({ threshold: 0 });
@@ -24,7 +14,7 @@ const Skills: React.FC = () => {
     config: { duration: 500 },
   });
 
-  const [skills, setSkills] = useState<Skill[]>([]);
+  const [skills, setSkills] = useRecoilState(skillState);
 
   useEffect(() => {
     getData("information", "skills").then(data => {

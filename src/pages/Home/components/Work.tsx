@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
-import { getData } from "../../../actions/cloude.store";
+import { useRecoilState } from "recoil";
 
-type Work = {
-  name: string;
-  position: string;
-  address: string;
-  date: string;
-  description: string[];
-};
+import { getData } from "../../../actions/cloude.store";
+import { workState } from "../../../recoils/Home/atom";
 
 const Work: React.FC = () => {
   const { ref, inView } = useInView({ threshold: 0 });
@@ -19,8 +14,7 @@ const Work: React.FC = () => {
     config: { duration: 500 },
   });
 
-  const [works, setWorks] = useState<Work[]>([]);
-
+  const [works, setWorks] = useRecoilState(workState);
   
   useEffect(() => {
     getData("information", "works").then(data => {
@@ -77,8 +71,8 @@ const Work: React.FC = () => {
           <div className="border rounded-lg border-zinc-600 bg-neutral-800 py-4 mb-2">
             {works.map((work) => (
               <div className="flex pr-2" key={work.name}>
-                <div className="pt-2 px-4 flex flex-col">
-                  <div className="h-3 w-3 bg-yellow-300 rounded-full mb-2"></div>
+                <div className="pt-2 px-4 flex flex-col text-yellow-300 text-xs">
+                  <i className="bi bi-circle-fill mb-2"></i>
                   <div className="h-full w-0.5 bg-yellow-300 mx-auto"></div>
                 </div>
                 <div>

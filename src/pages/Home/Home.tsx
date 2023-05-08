@@ -16,6 +16,7 @@ const Home: React.FC = () => {
         <Education />
         <Project />
       </div>
+      
     </div>
   );
 }

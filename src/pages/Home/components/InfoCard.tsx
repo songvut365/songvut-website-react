@@ -1,21 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
-import { getData } from "../../../actions/cloude.store";
+import { useRecoilState } from "recoil";
 
-type Information = {
-  image: string;
-  name: string;
-  position: string;
-  summary: string;
-  phone: string;
-  email: string;
-  address: string;
-  githubLink: string;
-  linkedInLink: string;
-  facebookLink: string;
-  instagramLink: string;
-};
+import { getData } from "../../../actions/cloude.store";
+import { InformationModel } from "../../../recoils/Home/model";
+import { informationState } from "../../../recoils/Home/atom";
 
 const InfoCard: React.FC = () => {
   const { ref, inView } = useInView({ threshold: 0 });
@@ -25,13 +15,13 @@ const InfoCard: React.FC = () => {
     config: { duration: 500 },
   });
 
-  const [information, setInformation] = useState<Information>({} as Information);
+  const [information, setInformation] = useRecoilState(informationState);
 
   useEffect(() => {
     getData("information", "info").then(data => {
-      setInformation(data as Information);
+      setInformation(data as InformationModel);
     })
-  }, []);
+  }, [setInformation]);
 
   return (
     <div className="max-w-sm md:max-w-xs w-full h-fit object-cover rounded-lg shadow-lg bg-zinc-800 mb-4">      

@@ -1,16 +1,11 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
+import { ProjectModel } from "../../../recoils/Home/model";
 
-type Project = {
-  cover: string;
-  name: string;
-  detail: string;
-  link: string;
-};
 
 type ProjectCardProps = {
-  project?: Project;
+  project?: ProjectModel;
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }: ProjectCardProps) => {
@@ -89,4 +84,3 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }: ProjectCardProps) 
 }
 
 export default ProjectCard;
-export type { Project };
