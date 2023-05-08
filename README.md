@@ -22,6 +22,15 @@ Builds the app for production to the build folder.
 
 Open [http://localhost:3000](http://localhost:3000) to view build mode it in your browser.
 
+## Run Unit Test
+
+In the project directory, you can run:
+
+`npm run test`
+
+All test results should pass.
+
+
 ## Learn More
 
 - [React](https://reactjs.org/)

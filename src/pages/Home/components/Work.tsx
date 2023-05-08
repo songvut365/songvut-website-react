@@ -5,6 +5,7 @@ import { useRecoilState } from "recoil";
 
 import { getData } from "../../../actions/cloude.store";
 import { workState } from "../../../recoils/Home/atom";
+import { calculateWorkYear } from "../../../utils/calculate.work";
 
 const Work: React.FC = () => {
   const { ref, inView } = useInView({ threshold: 0 });
@@ -82,7 +83,7 @@ const Work: React.FC = () => {
                   <p className="font-semibold text-lg text-white">
                     {work.name} - {work.address}
                   </p>
-                  <p className="text-white">{work.date}</p>
+                  <p>{work.date} • {calculateWorkYear(work.date)}</p>
                 </div>
               </div>
             ))}
