@@ -17,7 +17,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "14"
+          node-version: "20"
+
+      - name: Install Build Tools
+        run: sudo apt-get install -y build-essential
 
       - name: Install Dependencies
         run: npm install
@@ -32,3 +35,4 @@ jobs:
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_SONGVUT365 }}"
           channelId: live
           projectId: songvut365
+          folder: "dist"
