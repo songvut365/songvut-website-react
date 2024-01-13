@@ -98,30 +98,38 @@ const InfoCard: React.FC = () => {
 
           <div className="py-4 flex justify-center gap-7 text-3xl">
             <a
+              aria-label="github"
               href={information.githubLink}
               target="_blank"
               className="hover:scale-125"
+              rel="noopener noreferrer"
             >
               <i className="bi bi-github hover:text-yellow-300"></i>
             </a>
             <a
+              aria-label="linkedin"
               href={information.linkedInLink}
               target="_blank"
               className="hover:scale-125"
+              rel="noopener noreferrer"
             >
               <i className="bi bi-linkedin hover:text-yellow-300"></i>
             </a>
             <a
+              aria-label="facebook"
               href={information.facebookLink}
               target="_blank"
               className="hover:scale-125"
+              rel="noopener noreferrer"
             >
               <i className="bi bi-facebook hover:text-yellow-300"></i>
             </a>
             <a
+              aria-label="instagram"
               href={information.instagramLink}
               target="_blank"
               className="hover:scale-125"
+              rel="noopener noreferrer"
             >
               <i className="bi bi-instagram hover:text-yellow-300"></i>
             </a>
