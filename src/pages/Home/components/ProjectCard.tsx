@@ -51,6 +51,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   href={project.link}
                   target="_blank"
                   className="text-lg font-semibold text-white hover:text-zinc-400"
+                  rel="noopener noreferrer"
                 >
                   {project.name}
                 </a>
@@ -63,6 +64,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 href={project.link}
                 target="_blank"
                 className="uppercase text-sm font-semibold hover:text-zinc-400"
+                rel="noopener noreferrer"
               >
                 more details
               </a>
