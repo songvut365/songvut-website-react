@@ -133,7 +133,6 @@ export const SkillImage: React.FC<{ imagePath: string; alt: string }> = ({
     getImage(imagePath).then((data) => {
       setImage(data);
     });
-    console.log(image);
   }, [imagePath]);
 
   return <img src={image} alt={alt} className="h-16" />;
