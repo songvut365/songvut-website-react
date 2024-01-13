@@ -163,11 +163,17 @@ export const ImageProfile: React.FC<{ imagePath: string; alt: string }> = ({
   }, [imagePath]);
 
   return (
-    <img
-      src={image}
-      alt={alt}
-      className="rounded-t-lg w-full h-96 object-cover hover:cursor-pointer"
-    />
+    <div>
+      {image ? (
+        <img
+          src={image}
+          alt={alt}
+          className="rounded-t-lg w-full h-96 object-cover hover:cursor-pointer"
+        />
+      ) : (
+        <div className="animate-pulse h-96 bg-zinc-500"></div>
+      )}
+    </div>
   );
 };
 
