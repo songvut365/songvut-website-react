@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
 import { useRecoilState } from "recoil";
 
-import { getData } from "../../../actions/cloude.store";
+import { getData, getImage } from "../../../actions/cloude.store";
 import { skillState } from "../../../recoils/Home/atom";
 
 const Skills: React.FC = () => {
@@ -104,7 +104,10 @@ const Skills: React.FC = () => {
                           id={detail.name}
                           className="flex flex-col  items-center cursor-pointer"
                         >
-                          <img src={detail.image} className="h-16" />
+                          <SkillImage
+                            imagePath={detail.image}
+                            alt={detail.name}
+                          />
                           <p className="text-sm font-semibold">{detail.name}</p>
                         </div>
                       ))}
@@ -118,6 +121,22 @@ const Skills: React.FC = () => {
       </animated.div>
     </div>
   );
+};
+
+export const SkillImage: React.FC<{ imagePath: string; alt: string }> = ({
+  imagePath,
+  alt,
+}) => {
+  const [image, setImage] = useState<string>("");
+
+  useEffect(() => {
+    getImage(imagePath).then((data) => {
+      setImage(data);
+    });
+    console.log(image);
+  }, [imagePath]);
+
+  return <img src={image} alt={alt} className="h-16" />;
 };
 
 export default Skills;
