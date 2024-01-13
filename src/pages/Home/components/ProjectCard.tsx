@@ -27,9 +27,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         setCoverImage(data);
       });
     } else {
-      setCoverImage("xxx");
+      setCoverImage("");
     }
-  }, [coverImage]);
+  }, []);
 
   return (
     <animated.div ref={ref} style={fadeStyle}>

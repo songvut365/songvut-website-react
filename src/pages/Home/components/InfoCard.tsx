@@ -21,7 +21,7 @@ const InfoCard: React.FC = () => {
     getData("information", "info").then((data) => {
       setInformation(data as InformationModel);
     });
-  }, [setInformation]);
+  }, []);
 
   return (
     <div className="md:max-w-xs w-full h-fit object-cover rounded-lg shadow-lg bg-zinc-800 mb-4">
@@ -160,7 +160,7 @@ export const ImageProfile: React.FC<{ imagePath: string; alt: string }> = ({
     getImage(imagePath).then((data) => {
       setImage(data);
     });
-  }, [imagePath]);
+  }, []);
 
   return (
     <div>
